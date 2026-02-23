@@ -1,0 +1,62 @@
+:root {
+	/* Surface */
+	--bg: #070712;
+	--bg-subtle: #0d0d1f;
+	--text: #f3f0ff;
+	--muted: rgba(243, 240, 255, 0.65);
+
+	/* Accent */
+	--accent: #b49cff;
+	--accent-hover: #c8b8ff;
+	--accent2: #7ee0d6;
+
+	/* Cards / glass */
+	--card: rgba(255, 255, 255, 0.05);
+	--card-hover: rgba(255, 255, 255, 0.08);
+	--card-border: rgba(255, 255, 255, 0.1);
+
+	/* Elevation */
+	--radius: 18px;
+	--radius-sm: 10px;
+	--shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+	--shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+	/* Layout */
+	--max: 1080px;
+	--section-gap: 7rem;
+	--content-pad: 1.5rem;
+
+	/* Typography */
+	--font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+	--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+	--leading-body: 1.7;
+	--leading-heading: 1.15;
+
+	/* Transition */
+	--ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--duration: 0.3s;
+
+	/* Focus ring */
+	--focus-ring: 0 0 0 2px var(--accent);
+}
+
+@media (min-width: 768px) {
+	:root {
+		--content-pad: 2.5rem;
+		--section-gap: 9rem;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	:root {
+		--duration: 0.01s;
+	}
+}

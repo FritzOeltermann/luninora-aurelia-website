@@ -1,0 +1,220 @@
+@import './tokens.css';
+
+/* ---- Reset ---- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* ---- Base ---- */
+
+body {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: var(--leading-body);
+	color: var(--text);
+	background: var(--bg);
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+/* Subtle radial glow behind the page */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background:
+		radial-gradient(ellipse 60% 45% at 50% 0%, rgba(180, 156, 255, 0.08) 0%, transparent 70%),
+		radial-gradient(ellipse 50% 50% at 80% 80%, rgba(126, 224, 214, 0.05) 0%, transparent 60%);
+	pointer-events: none;
+}
+
+/* ---- Typography ---- */
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-heading);
+	font-weight: 400;
+	line-height: var(--leading-heading);
+	color: var(--text);
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+h2 {
+	font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: clamp(1.15rem, 2vw, 1.4rem);
+	margin-bottom: 0.5rem;
+}
+
+p {
+	color: var(--muted);
+	max-width: 65ch;
+}
+
+p + p {
+	margin-top: 1em;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: color var(--duration) var(--ease);
+}
+
+a:hover {
+	color: var(--accent-hover);
+}
+
+/* ---- Focus ---- */
+
+:focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring);
+	border-radius: var(--radius-sm);
+}
+
+/* ---- Skip link ---- */
+
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: 1rem;
+	z-index: 9999;
+	padding: 0.75rem 1.25rem;
+	background: var(--accent);
+	color: var(--bg);
+	border-radius: var(--radius-sm);
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+
+.skip-link:focus {
+	top: 1rem;
+}
+
+/* ---- Utility: section spacing ---- */
+
+section {
+	padding-block: var(--section-gap);
+	padding-inline: var(--content-pad);
+}
+
+/* ---- Utility: container ---- */
+
+.container {
+	width: 100%;
+	max-width: var(--max);
+	margin-inline: auto;
+}
+
+/* ---- Utility: card ---- */
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--card-border);
+	border-radius: var(--radius);
+	padding: 2rem;
+	transition:
+		background var(--duration) var(--ease),
+		box-shadow var(--duration) var(--ease);
+}
+
+.card:hover {
+	background: var(--card-hover);
+	box-shadow: var(--shadow-sm);
+}
+
+/* ---- Utility: button ---- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.85rem 2rem;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--bg);
+	background: var(--accent);
+	border: none;
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition:
+		background var(--duration) var(--ease),
+		box-shadow var(--duration) var(--ease),
+		transform var(--duration) var(--ease);
+}
+
+.btn:hover {
+	background: var(--accent-hover);
+	box-shadow: 0 0 24px rgba(180, 156, 255, 0.35);
+	transform: translateY(-1px);
+}
+
+.btn:active {
+	transform: translateY(0);
+}
+
+/* ---- Images ---- */
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* ---- Scrollbar (Webkit) ---- */
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--card-border);
+	border-radius: 4px;
+}
+
+/* ---- Reveal animation ---- */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.7s var(--ease),
+		transform 0.7s var(--ease);
+}
+
+.revealed {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
