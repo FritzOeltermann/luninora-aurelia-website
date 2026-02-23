@@ -23,7 +23,7 @@
 			{/each}
 		</div>
 
-		<a href={booking.ctaHref} class="cta-btn">{booking.ctaLabel}</a>
+		<a href={booking.ctaHref} class="cta-btn" target="_blank" rel="noopener">{booking.ctaLabel}</a>
 
 		<p class="subtext">{booking.subtext}</p>
 	</div>

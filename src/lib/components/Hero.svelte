@@ -59,7 +59,6 @@
 		height: 180px;
 		border-radius: 50%;
 		overflow: hidden;
-		margin-bottom: 1rem;
 		flex-shrink: 0;
 	}
 
@@ -83,7 +82,6 @@
 
 	h1 {
 		font-size: clamp(2.6rem, 6vw, 4.2rem);
-		margin-bottom: 0;
 		line-height: 1.1;
 	}
 
@@ -107,7 +105,6 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 2.5rem 3.5rem;
-		margin-top: 1.5rem;
 	}
 
 	.stat {

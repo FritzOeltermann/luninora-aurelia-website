@@ -7,7 +7,7 @@ export type AdvisorTheme = {
 };
 
 export type Stat = { label: string; value: string };
-export type Method = { title: string; description: string };
+export type Method = { icon: string; title: string; description: string };
 export type Service = { title: string; outcome: string; includes: string[] };
 
 export type Training = { title: string; description: string };
@@ -135,7 +135,7 @@ export const advisor: AdvisorProfile = {
 		sections: [
 			{
 				paragraphs: [
-					'Ich bin Andrea Richter und begleite seit über 22 Jahren Menschen auf ihrem Weg zu sich selbst. Mit mehr als 110.000 Beratungen durfte ich unzählige Menschen dabei unterstützen, Klarheit und inneren Frieden zu finden. Die Fragen "Wer bin ich wirklich?" und "Welchen Weg soll ich gehen?" begleiten viele von uns – und genau hier setze ich mit meiner Arbeit an.'
+					'Ich bin Aurelia Mondlicht und begleite seit über 22 Jahren Menschen auf ihrem Weg zu sich selbst. Mit mehr als 110.000 Beratungen durfte ich unzählige Menschen dabei unterstützen, Klarheit und inneren Frieden zu finden. Die Fragen "Wer bin ich wirklich?" und "Welchen Weg soll ich gehen?" begleiten viele von uns – und genau hier setze ich mit meiner Arbeit an.'
 				]
 			},
 			{
@@ -179,24 +179,44 @@ export const advisor: AdvisorProfile = {
 
 	methods: [
 		{
-			title: 'Intuitive Klarheit',
-			description:
-				'Direkte Wahrnehmung ohne Hilfsmittel \u2013 Muster, Dynamiken und emotionale Unterstr\u00f6mungen in deiner Situation lesen, so wie sie sich zeigen.'
+			icon: '♎',
+			title: 'Erfahrung',
+			description: 'Über 22 Jahre hauptberufliche Beratung, mehr als 110.000 Sitzungen'
 		},
 		{
-			title: 'Orakel-Legung',
-			description:
-				'Eine strukturierte Reflexion mit russischen und Lenormand-inspirierten Kartenlegungen. Keine Wahrsagerei \u2013 nur ehrliche Spiegel f\u00fcr das, was gesehen werden m\u00f6chte.'
+			icon: '✦',
+			title: 'Beratungsart',
+			description: 'Intuitiv, ruhig, präsent – Rundumblick mit den russischen Karten'
 		},
 		{
-			title: 'Mondzyklus-Arbeit',
-			description:
-				'Arbeit mit Neumond- und Vollmond-Timing f\u00fcr Intention, Reflexion und Integration. Inklusive Journaling-Impulse, die du mitnehmen kannst.'
+			icon: '☽',
+			title: 'Sternzeichen',
+			description: 'Waage – Balance und Harmonie als Lebensprinzip'
 		},
 		{
-			title: 'Energetischer Abschluss',
-			description:
-				'Ein ruhiger Nervensystem-Reset am Ende jeder Sitzung \u2013 gef\u00fchrte Atmung und sanfte Visualisierung, damit du geerdet und ruhig gehst.'
+			icon: '♡',
+			title: 'Beratungsstil',
+			description: 'Feinfühlig, empathisch, mit klarer innerer Haltung'
+		},
+		{
+			icon: '◎',
+			title: 'Hellwahrnehmung',
+			description: 'Hellsehen, Hellfühlen, Hellhören und Hellwissen'
+		},
+		{
+			icon: '❋',
+			title: 'Energiearbeit',
+			description: 'Reiki, Prana Healing, Chakren- und Aura-Arbeit'
+		},
+		{
+			icon: '☊',
+			title: 'Spirituelle Kontakte',
+			description: 'Engelkontakte, Channeling, Verbindung zu geistigen Führern'
+		},
+		{
+			icon: '✧',
+			title: 'Mein Ansatz',
+			description: 'Ganzheitlich, transformativ, auf dem Weg zu deinem wahren Selbst'
 		}
 	],
 
@@ -248,7 +268,7 @@ export const advisor: AdvisorProfile = {
 			}
 		],
 		ctaLabel: 'Jetzt Beratung auf LuniNora buchen',
-		ctaHref: 'https://luninora.com/aurelia-mondlicht',
+		ctaHref: 'https://luninora.de',
 		subtext: 'Sichere dir deinen Termin'
 	},
 

@@ -10,7 +10,7 @@
 		<div class="bg-overlay"></div>
 	{/if}
 	<blockquote class="container">
-		<p>{text}</p>
+		<p>„{text}"</p>
 	</blockquote>
 </section>
 
@@ -53,23 +53,10 @@
 		max-width: 48rem;
 	}
 
-	blockquote::before {
-		content: '\201C';
-		position: absolute;
-		top: -0.6em;
-		left: 50%;
-		transform: translateX(-50%);
-		font-family: var(--font-heading);
-		font-size: 5rem;
-		line-height: 1;
-		color: var(--accent);
-		opacity: 0.25;
-		pointer-events: none;
-	}
-
 	p {
 		font-family: var(--font-heading);
 		font-style: italic;
+		font-weight: 700;
 		font-size: clamp(1.3rem, 3vw, 1.8rem);
 		line-height: 1.6;
 		color: var(--text);

@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { advisor } from '$lib/data/advisor';
 	import { reveal } from '$lib/actions/reveal';
-	import TrainingCards from '$lib/components/TrainingCards.svelte';
 	import MethodCards from '$lib/components/MethodCards.svelte';
+	import QuoteBlock from '$lib/components/QuoteBlock.svelte';
 	import BookingSection from '$lib/components/BookingSection.svelte';
-	import Section from '$lib/components/Section.svelte';
 </script>
 
 <svelte:head>
@@ -19,14 +18,16 @@
 		<div class="bg-overlay"></div>
 	{/if}
 	<div class="philosophy-inner container">
-		<blockquote class="philosophy-quote">
-			<p>{advisor.aboutHeader.quote}</p>
-		</blockquote>
+		<h2>{advisor.aboutHeader.title}</h2>
 
 		<div class="philosophy-card">
 			<h3>{advisor.aboutHeader.cardHeading}</h3>
 			<p>{advisor.aboutHeader.cardDescription}</p>
 		</div>
+
+		<blockquote class="philosophy-quote">
+			<p>„{advisor.aboutHeader.quote}"</p>
+		</blockquote>
 	</div>
 </section>
 
@@ -58,13 +59,15 @@
 	</div>
 </section>
 
-<Section id="training" title="Meine Ausbildungen">
-	<TrainingCards items={advisor.story.training} />
-</Section>
+<QuoteBlock text="In meinen Beratungen geht es mir darum, den Menschen auf dem Weg zu sich selbst zu begleiten und ihm dabei zu helfen, den Frieden und die Sicherheit in sich selbst zu entdecken." backgroundSrc="/images/bg-about-quote.png" />
 
-<Section id="approach" title="Mein Ansatz">
-	<MethodCards items={advisor.methods} />
-</Section>
+<section id="training" class="training-approach" use:reveal>
+	<div class="container">
+		<h2>Meine Arbeit und Ausbildungen</h2>
+		<p class="training-text">Es folgten zahlreiche Ausbildungen und Weiterbildungen – Reiki, Prana Healing, Geistheilung, Quanten-Transformation, Telepathie und Telekinese sowie die Ausbildung zur Auraberaterin. Jede Station hat meine Wahrnehmung vertieft und meinen eigenen Stil geformt. Seit 2003 arbeite ich hauptberuflich als spirituelle Lebensberaterin. Menschen energetisch zu unterstützen, ihnen Klarheit und Kraft zurückzugeben, ist für mich nicht nur ein Beruf, sondern meine Berufung.</p>
+		<MethodCards items={advisor.methods} />
+	</div>
+</section>
 
 <BookingSection booking={advisor.booking} />
 
@@ -113,31 +116,21 @@
 		max-width: 48rem;
 	}
 
-	/* Quote (same style as Startseite quotes) */
-	.philosophy-quote {
-		position: relative;
+	.philosophy-inner h2 {
+		margin-bottom: 0;
 	}
 
-	.philosophy-quote::before {
-		content: '\201C';
-		position: absolute;
-		top: -0.6em;
-		left: 50%;
-		transform: translateX(-50%);
-		font-family: var(--font-heading);
-		font-size: 5rem;
-		line-height: 1;
-		color: var(--accent);
-		opacity: 0.25;
-		pointer-events: none;
+	.philosophy-quote {
+		margin-top: 1.5rem;
 	}
 
 	.philosophy-quote p {
 		font-family: var(--font-heading);
 		font-style: italic;
+		font-weight: 700;
 		font-size: clamp(1.3rem, 3vw, 1.8rem);
 		line-height: 1.6;
-		color: var(--text);
+		color: var(--accent);
 	}
 
 	/* Card (same design as booking card) */
@@ -230,4 +223,23 @@
 		margin-bottom: 0.75rem;
 	}
 
+	/* ── Merged training + approach section ── */
+	.training-approach {
+		padding-block: var(--section-gap);
+		padding-inline: var(--content-pad);
+		text-align: center;
+	}
+
+	.training-approach h2 {
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.training-text {
+		line-height: 1.8;
+		color: var(--accent);
+		max-width: 52rem;
+		margin-inline: auto;
+		margin-bottom: 2.5rem;
+	}
 </style>

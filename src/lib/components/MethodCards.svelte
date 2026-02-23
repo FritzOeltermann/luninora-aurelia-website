@@ -5,9 +5,9 @@
 </script>
 
 <div class="methods">
-	{#each items as method, i}
+	{#each items as method}
 		<article class="card method">
-			<span class="method-index">{String(i + 1).padStart(2, '0')}</span>
+			<span class="method-icon">{method.icon}</span>
 			<h3>{method.title}</h3>
 			<p>{method.description}</p>
 		</article>
@@ -21,36 +21,42 @@
 		gap: 1.25rem;
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 480px) {
 		.methods {
 			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 900px) {
+		.methods {
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 
 	.method {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		text-align: center;
 		gap: 0.5rem;
+		padding: 1.5rem 1rem;
 	}
 
-	.method-index {
-		font-family: var(--font-heading);
-		font-size: 2rem;
-		font-weight: 300;
+	.method-icon {
+		font-size: 1.6rem;
 		color: var(--accent);
-		opacity: 0.4;
-		line-height: 1;
 		margin-bottom: 0.25rem;
 	}
 
 	h3 {
 		font-family: var(--font-heading);
-		font-size: 1.25rem;
+		font-size: 1.1rem;
 		color: var(--text);
 	}
 
 	p {
-		font-size: 0.95rem;
-		line-height: 1.7;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--text-muted);
 	}
 </style>
