@@ -135,7 +135,7 @@ export const advisor: AdvisorProfile = {
 		sections: [
 			{
 				paragraphs: [
-					'Ich bin Aurelia Mondlicht und begleite seit über 22 Jahren Menschen auf ihrem Weg zu sich selbst. Mit mehr als 110.000 Beratungen durfte ich unzählige Menschen dabei unterstützen, Klarheit und inneren Frieden zu finden. Die Fragen "Wer bin ich wirklich?" und "Welchen Weg soll ich gehen?" begleiten viele von uns – und genau hier setze ich mit meiner Arbeit an.'
+					'Ich bin Aurelia Mondlicht und begleite seit 22 Jahren Menschen auf ihrem Weg zu sich selbst. Mit mehr als 110.000 Beratungen durfte ich unzählige Menschen dabei unterstützen, Klarheit und inneren Frieden zu finden. Die Fragen "Wer bin ich wirklich?" und "Welchen Weg soll ich gehen?" begleiten viele von uns – und genau hier setze ich mit meiner Arbeit an.'
 				]
 			},
 			{
