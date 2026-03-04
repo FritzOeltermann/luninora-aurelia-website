@@ -31,8 +31,8 @@ body::before {
 	inset: 0;
 	z-index: -1;
 	background:
-		radial-gradient(ellipse 60% 45% at 50% 0%, rgba(180, 156, 255, 0.08) 0%, transparent 70%),
-		radial-gradient(ellipse 50% 50% at 80% 80%, rgba(126, 224, 214, 0.05) 0%, transparent 60%);
+		radial-gradient(ellipse 80% 55% at 50% -10%, rgba(98, 192, 208, 0.22) 0%, transparent 72%),
+		radial-gradient(ellipse 60% 55% at 80% 90%, rgba(211, 181, 122, 0.12) 0%, transparent 68%);
 	pointer-events: none;
 }
 

@@ -59,12 +59,21 @@
 	</div>
 </section>
 
-<QuoteBlock text="In meinen Beratungen geht es mir darum, den Menschen auf dem Weg zu sich selbst zu begleiten und ihm dabei zu helfen, den Frieden und die Sicherheit in sich selbst zu entdecken." backgroundSrc="/images/bg-about-quote.png" />
+<QuoteBlock
+	text="Trauer, dunkle Energien und innere Blockaden dürfen leichter werden – in einem geschützten Raum, in dem alles da sein darf und wieder Licht in dein Leben kommen kann."
+	backgroundSrc="/images/maris-bg-about-quote.jpg"
+/>
 
 <section id="training" class="training-approach" use:reveal>
 	<div class="container">
-		<h2>Meine Arbeit und Ausbildungen</h2>
-		<p class="training-text">Es folgten zahlreiche Ausbildungen und Weiterbildungen – Reiki, Prana Healing, Geistheilung, Quanten-Transformation, Telepathie und Telekinese sowie die Ausbildung zur Auraberaterin. Jede Station hat meine Wahrnehmung vertieft und meinen eigenen Stil geformt. Seit 2003 arbeite ich hauptberuflich als spirituelle Lebensberaterin. Menschen energetisch zu unterstützen, ihnen Klarheit und Kraft zurückzugeben, ist für mich nicht nur ein Beruf, sondern meine Berufung.</p>
+		<h2>Meine Arbeit und Werkzeuge</h2>
+		<p class="training-text">
+			Seit über 20 Jahren begleite ich Menschen hellfühlig durch schwere Zeiten – mit einem besonderen
+			Fokus auf Seelenreinigung, das Neutralisieren negativer Energien, Trauerbegleitung,
+			seelische Blockaden und Tierkommunikation. Meine Hellfühligkeit, die Healing Water Orakel Karten
+			und meine Meeres Steine helfen dabei, Unsichtbares sichtbar zu machen und belastende Energien zu
+			wandeln.
+		</p>
 		<MethodCards items={advisor.methods} />
 	</div>
 </section>

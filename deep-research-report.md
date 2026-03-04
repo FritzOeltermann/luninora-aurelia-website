@@ -1,417 +1,279 @@
-# Implementation plan for a Svelte advisor microsite inspired by the Luninora ecosystem
+# Implementation Plan for Maris’ Advisor Website in Svelte
 
-## What the reference sites reveal about structure and vibe
+## Research synthesis from LuniNora and existing advisor sites
 
-The “advisor microsite” pattern you’re aiming for is already visible in how Luninora presents advisors and how the two inspiration pages translate that into a personal, atmospheric landing page.
+LuniNora positions itself explicitly as a modern, trust-centered platform (“Modern · Fair · Menschlich”) and uses calm, editorial language focused on clarity, trust, and human support. citeturn2view1turn8view0 This tone matters because your standalone advisor pages (“separate websites for each advisor”) function as a bridge between (a) a visitor’s emotional problem-state and (b) the structured, transactional booking flow on LuniNora.
 
-On Luninora, advisor profiles consistently contain a hero area with identity + trust signals (name, short tagline, rating, years of experience, categories), followed by “Über mich”-style storytelling (“Meine Geschichte”), a “Beratungsansatz” section, and an explicit list of themes/topics the advisor covers. citeturn1view2turn6view2 This gives you a stable information architecture: it’s content-first, trust-first, and makes methods + scope easy to scan.
+The three reference advisor sites you shared show a consistent template logic that balances “spiritual vibe” with professionalism:
 
-The two inspiration pages add the crucial “vibe” layer: they feel like calm, premium spiritual brands rather than marketplace listings. Common patterns:
+- A simple top navigation with three core destinations: **Home / About / Legal**, sometimes with a prominent “Book” CTA. citeturn1view1turn4view1turn4view0  
+- A strong hero block with a short, memorable promise line, a portrait, and a single primary action that routes back to the advisor’s profile on LuniNora. citeturn1view0turn1view1turn4view1  
+- Services expressed as **human themes** rather than “feature lists”, usually in a clear card/grid layout with short supporting copy. citeturn1view1turn4view1  
+- Trust signals are presented as “experience & volume” and framed as reassurance rather than hype. citeturn1view1turn4view1  
+- A dedicated Legal page that includes **Impressum + Datenschutzerklärung** plus disclaimers like “this is a presentation site; consultations happen on the platform”. citeturn3view3turn4view0  
 
-A bold, emotionally framed headline and short manifesto in the hero (“truth/clarity/strength” style) plus a quick set of keyword topics (love, decisions, spiritual growth, etc.). citeturn1view0  
-A strong personal authority signal via experience metrics and (optionally) “number of sessions,” combined with a poetic promise of what the session feels like. citeturn1view1  
-Repeated, clear CTAs that send users back to the Luninora booking flow (button text like “book now / request consultation”), so the microsite acts as branded top-of-funnel and trust builder rather than a standalone checkout. citeturn1view0turn1view1  
-Quote blocks used as “emotional anchors” (a short worldview statement) and a compact “profile card” style block near the bottom summarizing the advisor and linking back to their platform profile. citeturn1view0turn1view1
+For Maris specifically, LuniNora’s profile already sets key “pillars” you should preserve and amplify: her promise of peace through clarity (“Antworten & Klarheit ergeben Ruhe & Frieden”), the focus on negative energies / soul cleansing, grief support, and animal communication. citeturn2view0 Her questionnaire strengthens credibility with measurable experience (20 years, 6,000+ consultations) and defines her communication style (empathetic, honest, direct, understanding). fileciteturn0file0
 
-Brand-wise, Luninora positions itself as modern, fair, and calm (“home for spiritual counseling,” “quiet, serious atmosphere,” “clarity,” “trust”) and explicitly frames spirituality as responsible and not sensational. citeturn6view0turn6view1 That tone is worth mirroring in your microsite copy and visual design, even when the advisor’s individual “flair” is more mystical.
+## Site objectives and positioning for Maris
 
-image_group{"layout":"carousel","aspect_ratio":"16:9","query":["moonlit forest background aesthetic","astrology constellation illustration minimal","tarot card texture background","soft gradient spiritual website design"],"num_per_query":1}
+This site should feel like a **safe landing room**: calm, grounded, and unmistakably “esoteric” without drifting into kitsch. Your north star is: *a visitor can immediately sense (1) what Maris helps with, (2) how she works, (3) that she’s experienced and trustworthy, and (4) where to book*.
 
-## Fictional advisor concept built from the inspirations
+Positioning cues you can use (all grounded in Maris’ provided content/profile):
 
-Below is a fictional advisor profile that deliberately blends the “honest clarity + directness” style you see on entity["people","Evelyn Pahlke","spiritual advisor, de"] with the “energy work + card system + strong experience proof” style you see on entity["people","Andrea Richter","spiritual advisor, de"], while staying aligned with Luninora’s “responsible, calm, modern” brand language. citeturn1view0turn1view1turn6view1
+- **Primary outcomes**: relief, calm sleep, stopping the “thought carousel,” inner peace, clarity. citeturn2view0  
+- **Primary problem-language** visitors may bring: “dark energies,” “blockages,” grief, the fear of being cursed, unanswered questions that feel heavy. citeturn2view0  
+- **Primary differentiators**: hellfühlig perception + specific tools (Healing Water oracle cards, “Meeres Steine”), plus animal communication as a dedicated heart topic. citeturn2view0  
+- **Credibility**: 20 years experience and 6,000+ sessions (questionnaire), combined with a clear interpersonal style (direct + empathetic). fileciteturn0file0  
 
-**Fictional advisor name:** Elara Mondlicht (fiktiv)  
-**Core niche (“esoteric area”):** “Moon-cycle clarity readings” — a combination of intuitive perception, “Russian-style oracle / Lenormand-inspired” spreads, and gentle energy clearing as a session closing. (This echoes the “russian cards + energy work” positioning from the inspiration page, but remains original.) citeturn1view1  
-**Signature promise:** Calm, honest clarity. No sugarcoating, but always respectful and empowering (mirrors the “no empty hope / honest clarity” stance). citeturn1view0turn1view2  
-**Primary topics (chips):** Love & attachment patterns, decision-making, career direction, spiritual growth, self-worth, boundaries. This mirrors the “scan-first topic cluster” pattern from the inspiration hero. citeturn1view0turn1view1  
-**Trust signals (fictional but plausible):** “12+ years experience” and “35,000+ sessions” (your choice—keep realistic and consistent with the tone of the page). The “years + sessions count” structure matches the inspiration style. citeturn1view1  
-**Safety/disclaimer stance:** Add a gentle but explicit disclaimer similar to Luninora advisor profiles that limit medical/legal topics and frame energy work as non-medical. citeturn1view2  
-**CTA strategy:** Buttons that point to “Book on Luninora” (for your fictional site: keep URL as placeholder). The inspiration pages do exactly this. citeturn1view0turn1view1
+A subtle but important tone choice: Maris’ writing on LuniNora uses “Du/Dir” and intimate, supportive language; the site should mirror that for consistency and authenticity. citeturn2view0
 
-This gives you enough specificity to design a tailored vibe (moonlight, forest calm, soft starlight accents) while keeping the content modules reusable across many real advisors later.
+## Information architecture and page structure
 
-## Page architecture and component map
-
-To match the inspiration pages, implement this microsite as a **single-page layout with anchored sections** (Start, Story, Approach, Specialties/Services, Booking, Legal). This is consistent with the “simple navigation, scroll-based reading” feel of the reference sites. citeturn1view0turn1view1
-
-Recommended section order:
-
-**Top navigation (sticky, minimal)**  
-Links: Start, About, Approach, Specialties, Book, Legal. (Use anchor links like `#about`.) The inspiration pages keep navigation extremely small. citeturn1view0turn1view1
-
-**Hero (above the fold)**  
-Content blocks:
-- Headline (emotional framing: clarity/trust)
-- 2–4 sentence manifesto (“how I work, what you’ll get”)
-- Topic chips (keywords)
-- Primary CTA (“Book on Luninora”)
-- Portrait image (right side or centered)
-This mirrors both inspiration pages’ immediate “identity + promise + CTA.” citeturn1view0turn1view1
+Use the same high-performing structure as the reference sites: a **small multi-page site** with strong internal links and a consistently visible booking CTA. citeturn1view1turn4view1turn3view3
 
-**Quote block (short, poetic positioning)**  
-One strong paragraph or two lines; visually differentiated. This pattern is prominent on the inspiration pages. citeturn1view1turn1view0
-
-**About / My story**  
-Long-form story with “origin, training, turning point, what I believe.” This matches both Luninora advisor profiles and the inspiration pages. citeturn1view2turn1view0
-
-**Approach / Methods**  
-Present as 3–5 “method cards”:
-- Intuitive insight (no tools)
-- Oracle spreads (Russian-style / Lenormand-inspired)
-- Moon-cycle timing (new moon / full moon reflection)
-- Energy clearing close
-This echoes the “method list” style used on the inspiration page. citeturn1view0turn1view1
-
-**Specialties / Services**  
-A grid of service offerings with short outcomes and what the client can expect.
-Example:
-- “Relationship clarity reading”
-- “Decision compass”
-- “Career & calling alignment”
-- “Energetic reset (session closing)”
-Luninora also categorizes advisors by topics/methods like tarot/astrology/energy work; keep your content compatible with that taxonomy. citeturn6view2turn1view2
-
-**Trust signals and “mini profile card”**  
-Add a compact block: years experience, sessions, rating (optional), starting price (optional), and “secure booking via platform.” This mirrors the inspiration “profile on platform” card concept. citeturn1view0turn1view1
-
-**Booking section**  
-Include 3 “benefit bullets” (first session online, discreet, clear structure) and a strong CTA button. This mirrors the booking section pattern on the inspiration page. citeturn1view1
-
-**Legal section**  
-Impressum + Datenschutz placeholders (since you’re not deploying, treat as content modules). Luninora and the inspiration pages expose legal navigation clearly. citeturn6view1turn1view1
-
-## SvelteKit implementation blueprint and file structure
-
-Because your company uses Svelte and (eventually) deploys on entity["company","Vercel","cloud deployment platform"], the cleanest “microsite template” approach is **SvelteKit**, even if you don’t deploy this particular fictional site. Official SvelteKit docs now recommend scaffolding via `npx sv create`, and they describe the filesystem routing model (`src/routes`, `+page.svelte`). citeturn8view0
-
-### Project setup
-
-Use the SvelteKit scaffolder:
-
-```bash
-npx sv create advisor-microsite
-cd advisor-microsite
-npm install
-npm run dev
-```
-
-This matches the current SvelteKit recommended flow. citeturn8view0
-
-Suggested options during scaffolding (choose what your team prefers):
-- TypeScript: yes (helps keep content schemas stable across many advisors)
-- ESLint/Prettier: yes (keeps AI-agent output consistent)
-
-### Folder and route layout
-
-A simple, scalable structure:
-
-```text
-src/
-  app.html
-  routes/
-    +layout.svelte
-    +page.svelte
-  lib/
-    data/
-      advisor.ts
-    components/
-      Navbar.svelte
-      Hero.svelte
-      Section.svelte
-      ChipRow.svelte
-      QuoteBlock.svelte
-      MethodCards.svelte
-      ServicesGrid.svelte
-      TrustBar.svelte
-      BookingCTA.svelte
-      Legal.svelte
-      Footer.svelte
-    styles/
-      tokens.css
-      global.css
-static/
-  images/
-    elara-portrait.webp
-    bg-moonforest.webp
-    texture-stars.svg
-```
-
-SvelteKit’s routing is file-based; keeping everything in `+page.svelte` supports the “single-page anchored microsite” approach. citeturn8view0turn7search10
-
-### Data-driven content model (so you can scale to many advisors later)
-
-Create a single `advisor.ts` file that exports an object. Your components render from this object, not hardcoded strings in each component. This makes “one template, many advisor sites” straightforward later.
-
-Example (shape only—fill with your fictional copy):
-
-```ts
-// src/lib/data/advisor.ts
-export type AdvisorTheme = {
-  name: string;
-  accent: string;
-  accent2: string;
-  bg: string;
-  text: string;
-};
-
-export type AdvisorProfile = {
-  displayName: string;
-  tagline: string;
-  heroHeadline: string;
-  heroSubcopy: string;
-  topics: string[];
-  stats: { label: string; value: string }[];
-  portraitSrc: string;
-  backgroundSrc: string;
-  quote: string;
-
-  story: { title: string; paragraphs: string[] };
-  methods: { title: string; description: string }[];
-  services: { title: string; outcome: string; includes: string[] }[];
-
-  booking: {
-    ctaLabel: string;
-    ctaHref: string; // placeholder for fictional advisor
-    bullets: string[];
-    trustNote: string;
-  };
-
-  disclaimers: string[];
-  legal: { impressum: string; datenschutz: string };
-  theme: AdvisorTheme;
-};
-
-export const advisor: AdvisorProfile = {
-  // ...
-};
-```
-
-### Layout and anchors
-
-Inside `src/routes/+page.svelte` you compose your components in the page order and pass sections the data they need:
-
-```svelte
-<script lang="ts">
-  import { advisor } from '$lib/data/advisor';
-  import Navbar from '$lib/components/Navbar.svelte';
-  import Hero from '$lib/components/Hero.svelte';
-  import QuoteBlock from '$lib/components/QuoteBlock.svelte';
-  import MethodCards from '$lib/components/MethodCards.svelte';
-  import ServicesGrid from '$lib/components/ServicesGrid.svelte';
-  import TrustBar from '$lib/components/TrustBar.svelte';
-  import BookingCTA from '$lib/components/BookingCTA.svelte';
-  import Legal from '$lib/components/Legal.svelte';
-  import Footer from '$lib/components/Footer.svelte';
-</script>
-
-<svelte:head>
-  <title>{advisor.displayName} – Spiritual Guidance</title>
-  <meta name="description" content={advisor.tagline} />
-</svelte:head>
-
-<Navbar />
-
-<main id="main">
-  <Hero {advisor} />
-  <QuoteBlock text={advisor.quote} />
-
-  <section id="about">
-    <!-- story -->
-  </section>
-
-  <section id="approach">
-    <MethodCards items={advisor.methods} />
-  </section>
-
-  <section id="specialties">
-    <ServicesGrid items={advisor.services} />
-  </section>
-
-  <TrustBar stats={advisor.stats} />
-
-  <section id="book">
-    <BookingCTA booking={advisor.booking} />
-  </section>
-
-  <section id="legal">
-    <Legal legal={advisor.legal} disclaimers={advisor.disclaimers} />
-  </section>
-
-  <Footer />
-</main>
-```
-
-SvelteKit uses the `<title>` element for route announcements in client-side navigation; even if your microsite is single-page, setting a strong title is still recommended for accessibility and SEO. citeturn9view1
-
-### Scroll and navigation behavior
-
-For anchor navigation, keep it simple with `<a href="#about">About</a>`. SvelteKit’s link-behavior documentation notes that hash links scroll to matching IDs. citeturn9view0  
-Also implement a “skip to content” link to match accessibility best practices. A practical approach is to link to `#main` and visually reveal it on focus. citeturn7search2turn9view1
-
-## Design system for an “esoteric but premium” vibe
+Recommended routes:
 
-The fastest way to get the right feel (without overengineering) is to build a tiny theme system with CSS variables, then layer background imagery + subtle glow + careful typography. This approach supports “tailored per advisor” styling with minimal code changes.
+- **/** (Home / Startseite): the conversion page (clarity, offer, trust, booking)
+- **/about** (Über mich): the depth page (story, methods, values, boundaries)
+- **/legal** (Rechtliches): Impressum + Datenschutzerklärung + disclaimers
 
-### Theme tokens
+This maps perfectly to SvelteKit’s file-based routing model (each `+page.svelte` defines a page; shared UI goes in `+layout.svelte`). citeturn10search0turn10search4
 
-Create `src/lib/styles/tokens.css`:
-
-```css
-:root {
-  --bg: #070712;
-  --text: #f3f0ff;
-  --muted: rgba(243, 240, 255, 0.70);
+Home page section order (designed for emotional pacing)
 
-  --accent: #b49cff;   /* moonlit lavender */
-  --accent2: #7ee0d6;  /* aurora teal */
+1) **Hero (portrait + promise + CTA)**  
+   - Headline = Maris’ slogan (short, memorable)  
+   - Subhead = what she does in one line (soul cleansing, neutralizing negative energies, grief support, animal communication) fileciteturn0file0  
+   - CTA = “Jetzt Beratung auf LuniNora starten” (or “Rückruf anfordern”) aligned with the platform flow citeturn2view0  
 
-  --card: rgba(255,255,255,0.06);
-  --card-border: rgba(255,255,255,0.14);
+2) **“When things feel heavy” (problem-to-relief bridge)**  
+   - 3–5 short “If you…” lines mirroring Maris’ audience language (dark energies, blockages, grief, fear of curse) citeturn2view0  
 
-  --radius: 18px;
-  --shadow: 0 20px 60px rgba(0,0,0,0.55);
+3) **Services (structured, scannable cards)**  
+   - Seelenreinigung  
+   - Negative Energien neutralisieren  
+   - Trauerbegleitung  
+   - Seelische Blockaden lösen  
+   - Tierkommunikation (can be its own highlighted block) fileciteturn0file0  
 
-  --max: 1080px;
-}
+4) **Approach (“Ruhe und Vertrauen”)**  
+   - Explain how a session feels and how Maris works (hellfühlig + cards + sea stones; “calm and trust as pillars”) citeturn2view0  
 
-@media (prefers-reduced-motion: reduce) {
-  :root { scroll-behavior: auto; }
-}
-```
+5) **Trust signals (experience + style)**  
+   - 20 years  
+   - 6,000+ consultations  
+   - “einfühlsam, ehrlich, direkt, verständnisvoll” fileciteturn0file0  
 
-Then in `global.css`, implement:
-- a background stack (image + gradient overlay + subtle noise/texture)
-- large whitespace and calm line heights
-- consistent card styling for method/service items
+6) **Closing CTA (soft but clear)**  
+   - “Wenn du bereit bist…” + single button to LuniNora profile citeturn2view0  
 
-### Typography choices (inspired by the references)
+About page sections (depth without overwhelm)
 
-The inspiration pages communicate “premium calm” through:
-- short, strong headings
-- readable body paragraphs
-- italic/quote styling for emotional anchors citeturn1view0turn1view1
+- “My story” (long-form; can reuse the provided story almost verbatim) fileciteturn0file0  
+- “How I work” (process + tools) citeturn2view0  
+- “My values & boundaries” (professionalism + safety)  
+- Mini FAQ (address common anxieties such as feeling cursed; set expectations gently) citeturn2view0  
 
-Implementation suggestion:
-- Headings: an elegant serif (e.g., Cormorant Garamond)
-- Body: a modern sans (e.g., Inter)
+Legal page
 
-Add with a simple `<link>` in `app.html` or self-host. (Keep it simple for your first iteration.)
+Base it on the template seen on the reference sites (presentation-only disclaimer, liability/copyright sections, and an explicit “Stand:” date). citeturn3view3turn4view0  
+Update the statutory wording to current German law (see “Compliance” section below). citeturn9search2turn9search1
 
-### Micro-interactions that match the vibe (without being gimmicky)
+## Content blueprint and draft copy pack for Maris
 
-Use motion sparingly:
-- Gentle fade-in for sections (IntersectionObserver + CSS class)
-- Soft hover glow on cards/buttons
-- Respect `prefers-reduced-motion`
+Below is **additional** copy you can add beyond Maris’ provided text. Treat this as “draft language” to refine with your AI coding agent and (ideally) get a quick approval from Maris.
 
-This keeps the “modern, calm atmosphere” aligned with Luninora’s brand language. citeturn6view1
+Hero copy options (pick one)
 
-### Content tone guidelines
+Option A (closest to her slogan)  
+- Headline: **„Der heutige Tag bringt Licht und eine Wendung.“** citeturn2view0  
+- Subhead: *Seelenreinigung · negative Energien neutralisieren · Trauer begleiten · Tierkommunikation* fileciteturn0file0  
+- Support line: *Ruhig. Klar. Auf Augenhöhe.* fileciteturn0file0  
 
-To stay consistent with the ecosystem:
-- Make “clarity and empowerment” central (Luninora emphasizes clarity and responsible guidance). citeturn6view0turn6view1  
-- Avoid “guarantees” and sensational claims.
-- Add explicit disclaimers similar to those found in Luninora advisor profiles (no legal/medical replacement). citeturn1view2
+Option B (emphasize outcome)  
+- Headline: **Klarheit, die beruhigt.** citeturn2view0  
+- Subhead: *Wenn Fragen schwer werden, helfe ich dir, wieder Ruhe und inneren Frieden zu spüren.* citeturn2view0  
 
-## Step-by-step workflow to use with an AI coding agent
+Microcopy for the primary CTA (keep it platform-aligned)
 
-This is the practical sequence that works well when delegating implementation to an AI coding agent while keeping you in control of structure, aesthetics, and quality.
+- “Jetzt Beratung auf LuniNora starten” citeturn4view1turn1view1  
+- “Rückruf anfordern” (if you want to mirror LuniNora’s profile flow) citeturn2view0  
+- “Zum Profil auf LuniNora” (used as pattern on reference sites) citeturn1view1turn4view1  
 
-### Build the skeleton first
+Service card drafts (short, specific, non-overpromising)
 
-Ask your AI coding agent to:
-- Scaffold with `npx sv create`
-- Create the folder structure
-- Add `tokens.css` + `global.css`
-- Implement the page composition in `+page.svelte`
+- **Seelenreinigung**  
+  *Wenn du dich innerlich “beschwert” fühlst, schauen wir gemeinsam, was sich lösen darf — behutsam und klar.* citeturn2view0  
 
-Reference: SvelteKit’s recommended project creation and route/file conventions. citeturn8view0turn7search10
+- **Negative Energien neutralisieren**  
+  *Ich erspüre Belastungen und unterstütze dich dabei, wieder in deine eigene Kraft und Ruhe zu finden.* citeturn2view0  
 
-**Acceptance check:** the dev server runs, shows placeholder sections, navigation anchors scroll correctly.
+- **Begleitung bei Trauer**  
+  *Trauer muss nicht einsam sein. In einem geschützten Raum darf alles da sein — ohne Druck, ohne Bewertung.* fileciteturn0file0  
 
-### Lock the data contract
+- **Seelische Blockaden**  
+  *Wenn das Leben “steht” und du nicht weißt warum: Wir bringen Licht in das, was im Inneren wirkt.* citeturn2view0  
 
-Have the agent implement `advisor.ts` with a strict schema and placeholder content first. Then you refine the copy.
+- **Tierkommunikation**  
+  *Wenn du dein Tier vermisst oder Fragen offen sind: Wir schauen, welche Botschaft dir begegnen möchte.* citeturn2view0  
 
-Why this matters: It forces consistency across future advisor sites (same modules, different content) while still allowing per-advisor flair (theme + imagery + voice). This mirrors how Luninora can present many advisors with consistent modules, even though each advisor’s story differs. citeturn6view2turn1view2
+Short “How a session works” (professional framing)
 
-### Implement components in an order that protects the vibe
+A compact 3-step block typically reads very well and reduces uncertainty:
 
-Component build order:
-1. `Hero` (sets typography + atmosphere baseline)
-2. `QuoteBlock` (defines emotional styling language)
-3. `MethodCards` + `ServicesGrid` (reusable card system)
-4. `TrustBar` (stats, credibility)
-5. `BookingCTA` (conversion pattern)
-6. `Legal` + `Footer` (completeness)
+1. **Ankommen** – *Du schilderst kurz, was dich bewegt. Ich höre auch “zwischen den Zeilen”.* fileciteturn0file0  
+2. **Wahrnehmen & ordnen** – *Über Hellfühligkeit, Orakelkarten und meine Meeres-Steine sortiert sich das Bild.* citeturn2view0  
+3. **Impuls & Stärkung** – *Du gehst mit mehr Klarheit, Ruhe und einem nächsten Schritt.* citeturn2view0  
 
-This matches how the inspiration pages lead with identity + promise, then deepen into story and method, then re-surface the booking CTA. citeturn1view0turn1view1
+Trust block copy (use numbers sparingly)
 
-### Accessibility + UX hardening
+- “20 Jahre Erfahrung” fileciteturn0file0  
+- “6.000+ Beratungen” fileciteturn0file0  
+- “Einfühlsam · ehrlich · direkt · verständnisvoll” fileciteturn0file0  
 
-Minimum checklist (have the agent implement, you verify):
+Professional boundaries (recommended for both credibility and safety)
 
-A skip link that jumps to the `<main>` content. citeturn7search2  
-Meaningful `<title>` and meta description in `<svelte:head>`. citeturn9view1  
-Keyboard-visible focus states on nav and CTA buttons.  
-Alt text for the portrait and background images (or mark background decorative).  
-Respect `prefers-reduced-motion`.  
-Set `lang` correctly in `src/app.html` if your page content is German (SvelteKit notes you should set `lang` to match your content language). citeturn9view1
+The reference legal pages already include medical/therapy boundaries. citeturn4view0  
+A concise, friendly version you can place in About (and detail further in Legal):
 
-### Optional: static-build friendliness for later
+- *Spirituelle Beratung ersetzt keine medizinische, therapeutische oder rechtliche Beratung.* citeturn4view0  
+- *Bitte wende dich bei gesundheitlichen Themen an approbierte Fachpersonen.* citeturn4view0  
 
-Even though you’re not deploying this fictional version, it’s worth keeping the code “static-friendly” so the same template can later prerender for production microsites.
+## Visual design system for a professional “ocean-light” esoteric vibe
 
-SvelteKit documents static site generation through `adapter-static` plus the `prerender` option. citeturn8view1  
-You don’t have to implement it now—but avoid patterns that would block it (e.g., heavy server-only dependencies).
+Your target look is: **quiet luxury + sea-witch minimalism** (calm, dark depth, soft light accents). This matches both Maris’ “Healing Water / sea stones” details and LuniNora’s brand photography direction (misty landscapes, candlelight, twilight calm). citeturn2view0turn8view0
 
-## Appendix: fictional content pack for Elara Mondlicht
+image_group{"layout":"carousel","aspect_ratio":"16:9","query":["misty river landscape morning light minimal","candle lavender twilight moon aesthetic","sea stones smooth pebbles close up soft light","tarot cards minimal photography dark background"],"num_per_query":1}
 
-Use this as your initial `advisor.ts` content. It’s written to fit the reference structure (manifesto hero → story → approach → specialties → booking → disclaimers). The wording intentionally echoes the “honest clarity” voice found on the inspiration page and the “energy work + card system + experience proof” framing, but is not copied. citeturn1view0turn1view1
+Color palette (design tokens, not “hard rules”)
 
-**Hero headline**  
-“Clarity, calm, and a gentle return to your inner knowing.”
+Define tokens as CSS variables so you can theme per advisor later:
 
-**Hero subcopy**  
-“I work with quiet intuition, moon-cycle timing, and a grounded oracle practice to bring your situation into focus. I won’t promise miracles. I will help you see patterns, options, and the next honest step—with warmth, respect, and clear language.”
+- **Background (deep)**: near-black ocean / charcoal (primary page background)  
+- **Surface**: slightly lighter slate for cards and sections  
+- **Text**: warm off-white (avoid pure white to keep it premium)  
+- **Accent A**: sea-glass aqua (links, focus rings, subtle glow)  
+- **Accent B**: muted sand / gold (badges, dividers, “light” motif)  
 
-**Topic chips**  
-Love & attachment • Decision-making • Career direction • Spiritual growth • Self-worth • Boundaries • Energetic reset
+Why this works with the reference style: the example sites rely on large image sections + clear typography + restrained accents, rather than many bright colors. citeturn1view1turn4view1
 
-**Quote block**  
-“When everything feels loud, clarity rarely comes from more pressure. It comes from a softer, truer look.”
+Typography system
 
-**My story (3 short paragraphs)**  
-- Early sensitivity + learning to trust perception  
-- The turning point (burnout / life transition / spiritual practice deepening)  
-- Why she works with clients now: “help you see what’s already there”
+To keep it modern-professional (not “fantasy”), use a two-font structure:
 
-**Methods (cards)**  
-- “Intuitive clarity (no tools)” — patterns, dynamics, emotional undercurrents  
-- “Oracle spread (Russian / Lenormand-inspired)” — structured reflection, not fortune promises  
-- “Moon-cycle alignment” — timing, integration, journaling prompts  
-- “Energy clearing close” — calm nervous system reset (breath + visualization)
+- Headings: elegant serif (for “ritual / story / depth”)  
+- Body: clean sans (for clarity and trust)
 
-**Services (grid)**  
-- Relationship clarity session (what’s happening beneath the surface)  
-- Decision compass (options mapped, values clarified)  
-- Career & calling (direction, boundaries, confidence)  
-- Energetic reset (a short integrative closing)
+Keep line length comfortable (roughly 60–75 characters on desktop) and add generous spacing—the reference sites lean into whitespace and calm pacing. citeturn1view1turn4view1
 
-**Trust signals**  
-- “12+ years experience”  
-- “35,000+ sessions”  
-- “Discreet + respectful guidance”
+UI components to define up front
 
-**Booking bullets**  
-- Online via platform (secure, convenient)  
-- Clear structure: intention → insight → next steps  
-- Calm, supportive, and honest tone
+To make building fast with an AI coding agent, decide these components early:
 
-**Disclaimers (gentle, explicit)**  
-- “Spiritual guidance is not medical, psychological, or legal advice.” citeturn1view2  
-- “I don’t answer questions that require professional legal/medical expertise.” citeturn1view2  
-- “You always keep your agency—my role is clarity, not control.”
+- **Navbar**: transparent on hero → solid on scroll; 3 links + CTA button citeturn1view1turn4view1  
+- **Hero**: portrait + background image + gradient overlay (avoid busy patterns)  
+- **ServiceCard**: icon (simple SVG), title, 2–3 lines, optional “Learn more” anchor  
+- **QuoteBlock**: used heavily on inspiration sites; adds “voice” without clutter citeturn1view0turn1view1  
+- **MetricRow**: 2–3 stats (years, sessions) as a trust band fileciteturn0file0  
+- **CTASection**: single focus, no competing links  
+- **Footer**: mini navigation + “Consultations happen on platform” sentence citeturn3view3turn4view0  
 
-Competitor context note: platforms like entity["company","Questico","spiritual counseling portal, de"] position themselves similarly around categories (tarot, astrology, mediumship) and onboarding offers, which reinforces why these advisor microsites should emphasize differentiation through voice, method framing, and calm premium flair rather than generic “tarot reader” claims. citeturn10view0turn10view2
+Motion and “magic” (keep it subtle)
+
+Use micro-animations, not heavy effects:
+
+- Fade/slide-in on section entry (reduced motion supported)  
+- Subtle gradient “light sweep” on CTA hover  
+- No parallax unless it’s extremely gentle (professional first)
+
+## Svelte implementation roadmap and component architecture
+
+### Project approach
+
+Because these advisor sites are primarily content + strong SEO, you can build them as a fully prerendered static site with SvelteKit using `adapter-static`. citeturn10search1turn10search5 This keeps hosting flexible and removes backend complexity.
+
+Route structure with SvelteKit
+
+SvelteKit is file-based:
+
+- `src/routes/+page.svelte` → Home citeturn10search0  
+- `src/routes/about/+page.svelte` → About citeturn10search0  
+- `src/routes/legal/+page.svelte` → Legal citeturn10search0  
+- `src/routes/+layout.svelte` → shared shell (nav/footer) citeturn10search4  
+
+If you deploy on entity["company","Vercel","cloud deployment platform"] and later need SSR features, use the official Vercel adapter guidance; Vercel’s docs recommend explicitly installing the adapter for stability. citeturn11search1turn11search0
+
+### Content-as-data (critical for scaling across advisors)
+
+Even if you’re only building Maris now, structure it like a template:
+
+- `src/lib/content/maris.ts` (or `.json`) exporting:
+  - hero headline/subhead
+  - services array
+  - trust metrics
+  - story paragraphs
+  - faq items
+  - platform CTA link + label
+
+This lets you reuse components and swap advisor content without rewriting layout.
+
+### Suggested component tree
+
+Keep it simple and composable:
+
+- `src/lib/components/layout/`  
+  - `Navbar.svelte`  
+  - `Footer.svelte`
+
+- `src/lib/components/sections/`  
+  - `Hero.svelte`  
+  - `ServicesGrid.svelte`  
+  - `Approach.svelte`  
+  - `TrustBand.svelte`  
+  - `AnimalCommunicationHighlight.svelte`  
+  - `CTASection.svelte`
+
+- `src/lib/components/ui/`  
+  - `Button.svelte`  
+  - `Card.svelte`  
+  - `Badge.svelte`  
+  - `Quote.svelte`  
+  - `Section.svelte` (handles spacing + optional background variants)
+
+### Performance guardrails (baked into implementation)
+
+The biggest performance wins typically come from image optimization and correct loading priority. SvelteKit’s own performance guidance emphasizes that reducing image weight is often one of the most impactful changes. citeturn10search14 Lighthouse similarly recommends serving properly sized/optimized images and using modern formats where possible. citeturn11search8
+
+Practical rules for your build:
+
+- Don’t lazy-load the hero portrait if it’s the LCP element; prioritize it. (Keep lazy loading for below-the-fold images.) citeturn11search8turn11search19  
+- Add width/height to prevent layout shift. citeturn11search8  
+- Prefer AVIF/WebP for large images when possible. citeturn11search8  
+
+### Accessibility essentials (professional polish)
+
+Implement these as acceptance criteria:
+
+- Keyboard focus states clearly visible (especially on CTA)  
+- “prefers-reduced-motion” disables section animations  
+- Adequate contrast (accent aqua must still pass on dark backgrounds)  
+- Semantic headings: one H1, then H2/H3 properly nested
+
+Practical recommendation:
+
+- Prefer a simple outbound link to the Instagram profile rather than embedding posts. (You still meet the marketing goal, with less compliance risk.) citeturn12search1turn12search8  
+
+### On-page disclaimers and safety framing
+
+The “Rechtliches” pages in the reference sites include medical/therapy disclaimers; keep a version of this for Maris to remain professional and avoid over-claiming. citeturn4view0turn3view3  
+Place a gentle, short disclaimer on About; place the full text on Legal.
+
+### Definition of done (launch checklist)
+
+A “done” build for this advisor site should satisfy:
+
+- Visual polish consistent with the reference templates (hero + sections + quotes + strong CTA). citeturn1view1turn4view1  
+- Content correctness (Maris’ experience, themes, story, approach all match her provided materials). fileciteturn0file0turn2view0  
+- Legal correctness updated to DDG/TDDDG realities (no outdated “TMG-only” framing). citeturn9search2turn9search1turn12search1  
+- Performance: images optimized; no unnecessary third-party scripts. citeturn10search14turn11search8  
+- Deployment: static prerender works end-to-end (ideal for this content-type site). citeturn10search1turn10search5

@@ -42,7 +42,12 @@
 <style>
 	.footer {
 		border-top: 1px solid var(--card-border);
-		background: linear-gradient(to bottom, rgba(160, 120, 255, 0.25) 0%, var(--bg) 60%);
+		background: linear-gradient(
+			to bottom,
+			rgba(93, 184, 200, 0.16) 0%,
+			rgba(8, 14, 20, 0.96) 55%,
+			var(--bg) 100%
+		);
 	}
 
 	.footer-top {

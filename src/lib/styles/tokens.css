@@ -1,19 +1,19 @@
 :root {
 	/* Surface */
-	--bg: #070712;
-	--bg-subtle: #0d0d1f;
-	--text: #f3f0ff;
-	--muted: rgba(243, 240, 255, 0.65);
+	--bg: #0a1620; /* etwas heller, meeresnacht */
+	--bg-subtle: #111f2a;
+	--text: #f3f1ea;
+	--muted: rgba(243, 241, 234, 0.7);
 
 	/* Accent */
-	--accent: #b49cff;
-	--accent-hover: #c8b8ff;
-	--accent2: #7ee0d6;
+	--accent: #62c0d0; /* helleres Meerestürkis */
+	--accent-hover: #81d4e0;
+	--accent2: #d3b57a; /* warmes Sandgold */
 
 	/* Cards / glass */
-	--card: rgba(255, 255, 255, 0.05);
-	--card-hover: rgba(255, 255, 255, 0.08);
-	--card-border: rgba(255, 255, 255, 0.1);
+	--card: rgba(12, 32, 44, 0.9);
+	--card-hover: rgba(16, 40, 56, 0.98);
+	--card-border: rgba(127, 212, 224, 0.18);
 
 	/* Elevation */
 	--radius: 18px;

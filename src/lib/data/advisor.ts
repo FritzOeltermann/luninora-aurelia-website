@@ -91,43 +91,43 @@ export type AdvisorProfile = {
 };
 
 export const advisor: AdvisorProfile = {
-	displayName: 'Aurelia Mondlicht',
-	tagline: 'Spirituelle Beratung mit Klarheit, Ruhe und Herz.',
+	displayName: 'Maris',
+	tagline: 'Der heutige Tag bringt Licht und eine Wendung.',
 
-	heroHeadline: 'Klarheit, Ruhe und eine sanfte Rückkehr zu deinem inneren Wissen.',
+	heroHeadline: 'Der heutige Tag bringt Licht und eine Wendung.',
 	heroSubcopy:
-		'Mit über 22 Jahren Beratungserfahrung und mehr als 110.000 Beratungen begleite ich dich auf deinem Weg zu dir selbst. Mein Rundumblick mit den russischen Karten und meine hellsichtigen Fähigkeiten ermöglichen mir, bereits im ersten Moment zu spüren, welche Energie gerade gebraucht wird – ob auffangend, stärkend oder raumgebend.',
+		'Ich begleite dich hellfühlig auf deinem Weg zu mehr Ruhe, innerem Frieden und Klarheit. Mit Seelenreinigung, der Neutralisation negativer Energien, Trauerbegleitung, der Lösung seelischer Blockaden und einfühlsamer Tierkommunikation darf dein Weg wieder leichter werden.',
 	
 	topics: [
-		'Partnerschaft & Liebe',
-		'Russische Karten',
-		'Spirituelle Entwicklung',
-		'Energiearbeit',
-		'Lebensberatung'
+		'Seelenreinigung',
+		'Negative Energien',
+		'Trauerbegleitung',
+		'Seelische Blockaden',
+		'Tierkommunikation'
 	],
 
 	stats: [
-		{ label: 'Jahre Erfahrung', value: '22+' },
-		{ label: 'Beratungen', value: '110.000+' },
-		{ label: 'Ansatz', value: 'Diskret & Einfühlsam' }
+		{ label: 'Jahre Erfahrung', value: '20+' },
+		{ label: 'Beratungen', value: '6.000+' },
+		{ label: 'Beratungsstil', value: 'Einfühlsam & direkt' }
 	],
 
-	portraitSrc: '/images/ChatGPT Image Feb 22, 2026 at 11_46_09 PM.png',
-	aboutPortraitSrc: '/images/about-portrait.png',
-	backgroundSrc: '/images/bg-moonforest.webp',
+	portraitSrc: '/images/maris-portrait.png',
+	aboutPortraitSrc: '/images/maris-portrait-about.jpg',
+	backgroundSrc: '/images/maris-hero-bg.png',
 
 	aboutHeader: {
-		title: 'Meine Philosophie',
-		quote: 'Nicht weil es schwer ist, wagen wir es nicht, sondern weil wir es nicht wagen, ist es schwer.',
-		cardHeading: 'Gib der Möglichkeit eine Chance',
+		title: 'Ruhe und Vertrauen',
+		quote: 'Ruhe und Vertrauen sind die Pfeiler meiner Zeit mit dir.',
+		cardHeading: 'Wenn sich alles zu schwer anfühlt',
 		cardDescription:
-			'Bist du schon mal vom Leben positiv überrascht worden? Warst du schon mal so überzeugt davon, dass etwas nicht funktioniert und dann hat es plötzlich doch geklappt? In diesem Fall hat die Möglichkeit gesiegt! Vergiss deshalb nie den Samen der Möglichkeit auszusäen und schaue, was das Leben für dich bereithält. Lass dich überraschen!',
-		backgroundSrc: '/images/bg-philosophy.png'
+			'Trauer, unerklärliche dunkle Energien, Blockaden, offene Fragen und Angst können dein ganzes Leben überschatten. Gemeinsam bringen wir Licht in das, was dich belastet, damit du wieder ruhiger schlafen, das Gedankenkarussell anhalten und deinen Alltag leichter leben kannst.',
+		backgroundSrc: '/images/maris-bg-about.jpg'
 	},
 
 	quotes: [
-		'Durch Hellsicht und Energiearbeit öffne ich Räume, in denen sich Seelen erinnern dürfen, wer sie wirklich sind. Mit Orakelkarten, Engelkontakten und feiner Wahrnehmung übersetze ich das Unsichtbare in klare Impulse für Herz und Weg.',
-		'Meine Aufgabe ist es nicht, Entscheidungen abzunehmen, sondern Licht in das innere Wissen zu bringen – damit du gestärkt und mit neuer Klarheit deinen nächsten Schritt gehen kannst.'
+		'Ich erspüre Blockaden, Belastungen und offene Fragen, die ein normales Leben nahezu unmöglich machen – damit du wieder leichter atmen und deinen Weg sehen kannst.',
+		'Ruhe und Vertrauen sind die Pfeiler meiner Zeit mit dir. In einem geschützten Raum darf alles da sein – ohne Bewertung, ohne Druck.'
 	],
 
 	story: {
@@ -135,196 +135,209 @@ export const advisor: AdvisorProfile = {
 		sections: [
 			{
 				paragraphs: [
-					'Ich bin Aurelia Mondlicht und begleite seit 22 Jahren Menschen auf ihrem Weg zu sich selbst. Mit mehr als 110.000 Beratungen durfte ich unzählige Menschen dabei unterstützen, Klarheit und inneren Frieden zu finden. Die Fragen "Wer bin ich wirklich?" und "Welchen Weg soll ich gehen?" begleiten viele von uns – und genau hier setze ich mit meiner Arbeit an.'
+					'„Ich wurde verflucht, ich spüre es!“ – solche Hilferufe bekomme ich heute beinahe täglich. Dahinter steht oft der tiefe Wunsch nach Selbstheilung und innerem Frieden. Lange Zeit wusste ich selbst nicht, was mit mir geschieht, wenn sich vor meinem inneren Auge wie von selbst Bilder, Gefühle und offene Seiten eines Buches zeigen.',
+					'Es dauerte Jahre, bis ich verstand, was da bei mir vorging: Hellfühligkeit. Endlich hatte ich einen Namen für das, was mich schon so lange begleitet hatte. Seitdem helfe ich Menschen, die sich von dunklen Energien, Trauer, Angst und inneren Blockaden nahezu gelähmt fühlen – und bin dankbar, so vielen seelische Erleichterung und Frieden schenken zu dürfen.'
 				]
 			},
 			{
-				heading: 'Mein Weg zur Beratung',
+				heading: 'Ein Schlüsselmoment mit Tatze',
 				paragraphs: [
-					'Schon als Kind war ich oft allein und suchte intuitiv die Nähe zur geistigen Welt. In dieser stillen Verbindung spürte ich Wärme, Geborgenheit und ein tiefes Einssein mit allem, was ist. Besonders geprägt hat mich meine Großmutter – sie war hellsichtig und sagte Dinge voraus, die später tatsächlich eintrafen. Dieses natürliche Vertrauen in das Unsichtbare hat mich schon früh fasziniert.'
+					'Zudem empfange ich seit einiger Zeit Botschaften von Tieren. Ein Schlüsselmoment war der Abschied von Tatze, dem Kater einer Bekannten. Sie saß auf meinem Sofa, in tiefer Trauer und mit der quälenden Frage, ob sie ihn zu spät zum Tierarzt gebracht hatte.',
+					'Aus einem Impuls heraus sagte ich: „Du hättest nichts tun können, es war an der Zeit. Er wollte zu Hause gehen. Bei dir. Und er liebt dich so sehr.“ Ich wusste es einfach – ich „hörte“ seine Gefühle. In diesem Moment weinten wir gemeinsam. Seitdem ist die Tierkommunikation eine Herzensaufgabe für mich geworden.'
 				]
 			},
 			{
-				heading: 'Der Wendepunkt',
+				heading: 'Mein Ansatz in der Beratung',
 				paragraphs: [
-					'Der entscheidende Wendepunkt kam mit 30, als mein Körper plötzlich nicht mehr so funktionierte wie zuvor und Ärzte keine Ursache fanden. Diese Krise öffnete mir den Weg zu Reiki. Bereits während meiner Einweihung bekam ich klare Visionen über meinen weiteren Lebensweg. Das war der Moment, in dem ich bewusst wusste: Meine Aufgabe liegt in der spirituellen Begleitung.'
-				]
-			},
-			{
-				heading: 'Meine Arbeitsweise',
-				paragraphs: [
-					'Ich nehme die Energie und die Ausstrahlung bereits bei der Begrüßung wahr. Mein Rundumblick mit den russischen Karten zeigt mir, welche Energie gerade gebraucht wird – ob auffangend, stärkend oder raumgebend. Ich empfange die vielen Emotionen, ohne sie zu spiegeln, und bleibe stets neutral in meiner Beobachtung. Dadurch gebe ich dir die Möglichkeit, dir einfach mal alles von der Seele zu reden, ohne dabei bewertet zu werden.',
-					'Ich freue mich darauf, dich auf deinem Weg begleiten zu dürfen und dir mit meiner Erfahrung zur Seite zu stehen.'
+					'Ich freue mich, dich auf deinem Weg zu mehr Lebensfreude und Klarheit begleiten zu dürfen. Trauer, unerklärliche dunkle Energien, Blockaden, offene Fragen und Angst können dein Leben und dein Sein tief negativ beeinflussen. Gemeinsam schauen wir dorthin, wo es wehtut – in deinem Tempo und in einem sicheren Rahmen.',
+					'Durch meine Hellfühligkeit, unterstützt durch Healing Water Orakel Karten sowie meine Meeres Steine, ist es mir möglich, starke negative Energien zu entkräften, deine Seele zu reinigen, Trauer zu mildern und in tieferen Kontakt mit dir selbst zu kommen. Ruhe und Vertrauen sind die Pfeiler meiner Zeit mit dir.'
 				]
 			}
 		],
 		training: [
 			{
-				title: 'Vielfältige Ausbildungen',
+				title: '20+ Jahre Erfahrung',
 				description:
-					'Es erfolgten zahlreiche Ausbildungen und Weiterbildungen – Reiki, Prana Healing, Geistheilung, Quanten-Transformation, Telepathie und Telekinese sowie die Ausbildung zur Auraberaterin.'
+					'Seit über 20 Jahren begleite ich Menschen hellfühlig durch schwere Zeiten, Krisen und Übergänge – mit besonderem Fokus auf Seelenreinigung, Trauer und negative Energien.'
 			},
 			{
-				title: 'Wachstum & Vertiefung',
+				title: 'Hellfühligkeit & Werkzeuge',
 				description:
-					'Jede Station hat meine Wahrnehmung vertieft und meinen eigenen Stil geformt.'
+					'Meine Arbeit vereint Hellfühligkeit mit Healing Water Orakel Karten und Meeres Steinen. Diese Werkzeuge unterstützen dabei, Unsichtbares sichtbar zu machen und belastende Energien zu wandeln.'
 			},
 			{
-				title: 'Berufung seit 2003',
+				title: 'Tierkommunikation als Herzensaufgabe',
 				description:
-					'Seit 2003 arbeite ich hauptberuflich als spirituelle Lebensberaterin. Menschen energetisch zu unterstützen, ihnen Klarheit und Kraft zurückzugeben, ist für mich nicht nur ein Beruf, sondern meine Berufung.'
+					'Die Begleitung von Mensch und Tier – besonders in Zeiten von Verlust und Abschied – ist ein wichtiger Teil meiner Arbeit geworden. Botschaften aus der Tierseele können Trost, Verständnis und Frieden schenken.'
 			}
 		]
 	},
 
 	methods: [
 		{
-			icon: '♎',
-			title: 'Erfahrung',
-			description: 'Über 22 Jahre hauptberufliche Beratung, mehr als 110.000 Sitzungen'
+			icon: '◎',
+			title: 'Hellfühligkeit',
+			description:
+				'Ich erspüre Blockaden, Belastungen und offene Fragen, die wie dunkle Energien auf deiner Seele liegen und dein Leben schwer machen.'
 		},
 		{
-			icon: '✦',
-			title: 'Beratungsart',
-			description: 'Intuitiv, ruhig, präsent – Rundumblick mit den russischen Karten'
+			icon: '🌊',
+			title: 'Healing Water Orakel',
+			description:
+				'Orakelkarten, die Bilder, Gefühle und Zusammenhänge an die Oberfläche bringen und so Klarheit und Orientierung schenken.'
 		},
 		{
-			icon: '☽',
-			title: 'Sternzeichen',
-			description: 'Waage – Balance und Harmonie als Lebensprinzip'
+			icon: '🪨',
+			title: 'Meeres Steine',
+			description:
+				'Erdende und klärende Begleiter, die während der Sitzung Ruhe, Stabilität und einen sicheren Anker geben.'
+		},
+		{
+			icon: '🐾',
+			title: 'Tierkommunikation',
+			description:
+				'Feinfühliger Kontakt zu Tierseelen – besonders in Zeiten von Verlust, Trauer oder offenen Fragen rund um dein Tier.'
 		},
 		{
 			icon: '♡',
 			title: 'Beratungsstil',
-			description: 'Feinfühlig, empathisch, mit klarer innerer Haltung'
+			description: 'Einfühlsam, ehrlich, direkt und verständnisvoll – auf Augenhöhe und ohne Bewertung.'
 		},
 		{
-			icon: '◎',
-			title: 'Hellwahrnehmung',
-			description: 'Hellsehen, Hellfühlen, Hellhören und Hellwissen'
-		},
-		{
-			icon: '❋',
-			title: 'Energiearbeit',
-			description: 'Reiki, Prana Healing, Chakren- und Aura-Arbeit'
-		},
-		{
-			icon: '☊',
-			title: 'Spirituelle Kontakte',
-			description: 'Engelkontakte, Channeling, Verbindung zu geistigen Führern'
-		},
-		{
-			icon: '✧',
-			title: 'Mein Ansatz',
-			description: 'Ganzheitlich, transformativ, auf dem Weg zu deinem wahren Selbst'
+			icon: '✦',
+			title: 'Erfahrung',
+			description: 'Über 20 Jahre gelebte Praxis mit tausenden Beratungen und ein tiefes Verständnis für seelische Prozesse.'
 		}
 	],
 
 	services: [
 		{
-			title: 'Beziehungsklarheit',
-			outcome: 'Erkennen, was unter der Oberfl\u00e4che geschieht.',
-			includes: ['Bindungsmuster-Lesung', 'Dynamik-Mapping', 'Ehrliche N\u00e4chste-Schritte-Begleitung']
+			title: 'Seelenreinigung',
+			outcome: 'Wenn sich deine Seele schwer anf\u00fchlt und du wieder frei atmen m\u00f6chtest.',
+			includes: [
+				'Behutsames Ersp\u00fcren dessen, was dich belastet',
+				'Energiearbeit zur Kl\u00e4rung und Reinigung',
+				'Impulse, wie du Leichtigkeit in deinen Alltag holen kannst'
+			]
 		},
 		{
-			title: 'Entscheidungskompass',
-			outcome: 'Optionen aufzeigen, Werte kl\u00e4ren.',
-			includes: ['Situations-Legung', 'Werte-Abgleich', 'Klarheit \u00fcber Abw\u00e4gungen']
+			title: 'Negative Energien neutralisieren',
+			outcome: 'Wenn du das Gef\u00fchl hast, von dunklen Energien umgeben zu sein.',
+			includes: [
+				'Aufsp\u00fcren von energetischen Belastungen',
+				'St\u00e4rkung deiner eigenen Kraft und deines Schutzes',
+				'Kl\u00e4rende Impulse f\u00fcr deinen weiteren Weg'
+			]
 		},
 		{
-			title: 'Beruf & Berufung',
-			outcome: 'Richtung, Grenzen, Selbstvertrauen.',
-			includes: ['Berufungsreflexion', 'Grenzen-Audit', 'Energie-Alignment-Lesung']
+			title: 'Begleitung bei Trauer',
+			outcome: 'Wenn Verlust und Schmerz deinen Alltag bestimmen.',
+			includes: [
+				'Gesch\u00fctzter Raum f\u00fcr alle Gef\u00fchle',
+				'Sanfte Entlastung und Stabilisierung',
+				'Unterst\u00fctzung, um Schritt f\u00fcr Schritt wieder ins Leben zu finden'
+			]
 		},
 		{
-			title: 'Energetischer Reset',
-			outcome: 'Ein kurzer integrativer Abschluss f\u00fcr tiefe Sitzungen.',
-			includes: ['Atem-Anleitung', 'Visualisierung', 'Erdungspraxis']
+			title: 'Seelische Blockaden l\u00f6sen',
+			outcome: 'Wenn dein Leben \u201esteht\u201c und du nicht wei\u00dft, warum.',
+			includes: [
+				'Hellf\u00fchlige Wahrnehmung innerer Blockaden',
+				'Deutung von Mustern und Wiederholungen',
+				'Licht in Themen bringen, die dich schon lange begleiten'
+			]
+		},
+		{
+			title: 'Tierkommunikation',
+			outcome: 'Wenn du dein Tier vermisst oder offene Fragen bleiben.',
+			includes: [
+				'Feinf\u00fchliger Kontakt zu deinem Tier',
+				'Botschaften, die Trost, Verst\u00e4ndnis und Frieden schenken k\u00f6nnen',
+				'Unterst\u00fctzung im Umgang mit Abschied, Schuldgef\u00fchlen oder Unsicherheit'
+			]
 		}
 	],
 
 	booking: {
-		badge: 'Premium-Beratung auf LuniNora',
-		heading: 'Buche jetzt deine pers\u00f6nliche Beratung',
+		badge: 'Beratung auf LuniNora',
+		heading: 'Buche jetzt deine Beratung mit Maris',
 		description:
-		'Erlebe meine einfühlsame spirituelle Beratung auf LuniNora – mit Hellsicht, Rundumblick durch die russischen Karten und Energiearbeit. Über 22 Jahre Erfahrung und mehr als 110.000 Beratungen fließen in jede Sitzung ein, um dich auf deinem Weg zu Klarheit und innerem Frieden zu begleiten.',
+			'Ich begleite dich hellfühlig und klar – mit Seelenreinigung, der Neutralisation negativer Energien, Trauerbegleitung, der Lösung seelischer Blockaden und Tierkommunikation. In jeder Sitzung geht es darum, dass du leichter, ruhiger und mit mehr innerem Frieden weitergehen kannst.',
 		features: [
 			{
-				icon: '\ud83d\udcc5',
-				title: 'Erste Sitzung',
-				description: 'Online über LuniNora – bequem von zu Hause aus'
+				icon: '📞',
+				title: 'Einfacher Start',
+				description: 'Die Beratung findet bequem online über LuniNora statt – von überall aus.'
 			},
 			{
-				icon: '\u2764\ufe0f',
-				title: 'Einf\u00fchlsame Begleitung',
-				description:
-					'Mit über 22 Jahren Erfahrung und 110.000+ Beratungen an deiner Seite'
+				icon: '♡',
+				title: 'Einfühlsame Begleitung',
+				description: 'Mit über 20 Jahren Erfahrung und tausenden Beratungen an deiner Seite.'
 			},
 			{
-				icon: '\u2728',
-				title: 'Ganzheitliche Wahrnehmung',
-				description:
-					'Hellsicht, Energiearbeit und spirituelle Führung vereint'
+				icon: '✨',
+				title: 'Klarheit & Ruhe',
+				description: 'Hellfühligkeit, Orakelkarten und Meeres Steine vereint für mehr Licht auf deinem Weg.'
 			}
 		],
-		ctaLabel: 'Jetzt Beratung auf LuniNora buchen',
+		ctaLabel: 'Jetzt Beratung auf LuniNora starten',
 		ctaHref: 'https://luninora.de',
-		subtext: 'Sichere dir deinen Termin'
+		subtext: 'Du musst das nicht alleine tragen.'
 	},
 
 	legal: {
 		impressum: {
-			name: 'Aurelia Mondlicht (fiktiv)',
-			address: 'Musterstra\u00dfe 1\n10115 Berlin',
+			name: 'Maris [Nachname – Platzhalter]',
+			address: '[Straße, Hausnummer]\n[PLZ] [Ort]',
 			country: 'Deutschland',
-			contact: 'E-Mail: kontakt@aurelia-mondlicht.de',
-			steuernummer: '000/000/00000',
+			contact: 'E-Mail: [E-Mail-Adresse von Maris einfügen]',
+			steuernummer: '[Steuernummer ergänzen]',
 			hinweis:
 				'Diese Website dient ausschlie\u00dflich der Pr\u00e4sentation. Alle Beratungen finden ausschlie\u00dflich \u00fcber die Plattform LuniNora statt.',
 			haftung:
 				'Die Inhalte dieser Website wurden mit gr\u00f6\u00dfter Sorgfalt erstellt. F\u00fcr die Richtigkeit, Vollst\u00e4ndigkeit und Aktualit\u00e4t der Inhalte kann ich jedoch keine Gew\u00e4hr \u00fcbernehmen.',
 			urheberrecht:
 				'Die von mir erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.',
-			stand: 'Stand: 22. Februar 2026'
+			stand: 'Stand: 04. März 2026'
 		},
 		datenschutz: {
-			subtitle: 'Zuletzt aktualisiert: 22. Februar 2026',
+			subtitle: 'Zuletzt aktualisiert: 04. März 2026',
 			sections: [
 				{
 					title: '1. Verantwortliche Stelle',
 					content:
-						'Aurelia Mondlicht (fiktiv)\nMusterstra\u00dfe 1\n10115 Berlin\nE-Mail: kontakt@aurelia-mondlicht.de'
+						'Maris [Nachname – Platzhalter]\n[Straße, Hausnummer]\n[PLZ] [Ort]\nE-Mail: [E-Mail-Adresse von Maris einfügen]'
 				},
 				{
 					title: '2. Art und Umfang der Datenverarbeitung',
 					content:
-						'Diese Website ist eine reine Informationsseite. Es werden keine Cookies gesetzt und keine personenbezogenen Daten erhoben oder gespeichert.'
+						'Diese Website ist eine reine Informationsseite. Es werden keine Cookies gesetzt und keine personenbezogenen Daten über diese Seite erhoben oder gespeichert.'
 				},
 				{
-					title: '3. Webanalyse mit Vercel Analytics',
+					title: '3. Webanalyse',
 					content:
-						'Ich nutze Vercel Web Analytics, einen datenschutzfreundlichen Analysedienst von Vercel Inc. Dieser erfasst anonymisierte Nutzungsdaten ohne Cookies (Seitenaufrufe, Referrer, ungef\u00e4hrer Standort, Ger\u00e4tetyp). Es werden keine individuellen Nutzerprofile erstellt. Vercel Inc. ist unter dem EU-U.S. Data Privacy Framework zertifiziert.'
+						'Derzeit wird kein Webanalyse-Dienst eingesetzt, der personenbezogene Daten verarbeitet. Sollte sich dies ändern, wird diese Datenschutzerklärung entsprechend aktualisiert.'
 				},
 				{
 					title: '4. Hosting',
 					content:
-						'Diese Website wird bei Vercel Inc. (USA) gehostet. Beim Besuch werden technische Zugriffsdaten in Server-Logfiles gespeichert.'
+						'Diese Website wird bei einem externen Dienstleister gehostet. Beim Besuch der Seite können technische Zugriffsdaten (z. B. IP-Adresse, Zeitpunkt des Zugriffs, verwendeter Browser) in Server-Logfiles gespeichert werden. Diese Daten dienen der Sicherstellung des technischen Betriebs und werden nicht zu Marketingzwecken ausgewertet.'
 				},
 				{
 					title: '5. Externe Links',
 					content:
-						'Diese Website enth\u00e4lt Links zu externen Plattformen, insbesondere zu LuniNora. F\u00fcr die Datenverarbeitung dort gelten deren Datenschutzerkl\u00e4rungen.'
+						'Diese Website enthält Links zu externen Plattformen, insbesondere zu LuniNora. Für die Datenverarbeitung auf diesen externen Seiten gelten ausschließlich die dortigen Datenschutzerklärungen.'
 				}
 			],
-			stand: 'Stand: 22. Februar 2026'
+			stand: 'Stand: 04. März 2026'
 		}
 	},
 
 	theme: {
-		name: 'moonlit',
-		accent: '#b49cff',
-		accent2: '#7ee0d6',
-		bg: '#070712',
-		text: '#f3f0ff'
+		name: 'ocean-light',
+		accent: '#5db8c8',
+		accent2: '#c8a96e',
+		bg: '#080e14',
+		text: '#f0ede6'
 	}
 };
