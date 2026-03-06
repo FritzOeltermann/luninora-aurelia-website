@@ -1,17 +1,19 @@
 <script lang="ts">
 	import type { Service } from '$lib/data/advisor';
+	import { Sparkles, Shield, Heart, Unlock, PawPrint } from 'lucide-svelte';
 
 	let { items }: { items: Service[] } = $props();
 
-	// Subtle, monochrome symbol icons (no color emoji)
-	const icons = ['◍', '✧', '✶', '⤿', '✶'];
+	const icons = [Sparkles, Shield, Heart, Unlock, PawPrint];
 </script>
 
 <div class="services">
 	{#each items as service, index}
 		<article class="card service">
 			<div class="service-header">
-				<div class="service-icon">{icons[index] ?? '✦'}</div>
+				<div class="service-icon">
+					<svelte:component this={icons[index] ?? Sparkles} size={20} strokeWidth={1.8} />
+				</div>
 				<h3>{service.title}</h3>
 			</div>
 			<p class="bullets">{service.bullets.join(' ')}</p>
@@ -74,6 +76,8 @@
 		font-family: var(--font-heading);
 		font-size: 1.45rem;
 		color: var(--text);
+		margin: 0;
+		line-height: 1.15;
 	}
 
 	.bullets {
@@ -93,6 +97,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		flex-shrink: 0;
 		width: 2.3rem;
 		height: 2.3rem;
 		border-radius: 999px;

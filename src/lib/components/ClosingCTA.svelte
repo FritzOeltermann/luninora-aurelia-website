@@ -78,6 +78,7 @@
 		max-width: 34rem;
 		justify-self: end;
 		text-align: left;
+		margin-left: 6rem;
 	}
 
 	@media (min-width: 768px) {
