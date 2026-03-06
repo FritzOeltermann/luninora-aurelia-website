@@ -43,7 +43,29 @@
 					<a href={link.href} onclick={closeMenu}>{link.label}</a>
 				</li>
 			{/each}
+			<li class="nav-cta-mobile">
+				<a
+					href={advisor.booking.ctaHref}
+					class="nav-cta-btn"
+					target="_blank"
+					rel="noopener"
+					onclick={closeMenu}
+				>
+					<span class="nav-cta-icon" aria-hidden="true"></span>
+					Beratung buchen
+				</a>
+			</li>
 		</ul>
+
+		<a
+			href={advisor.booking.ctaHref}
+			class="nav-cta-btn nav-cta-desktop"
+			target="_blank"
+			rel="noopener"
+		>
+			<span class="nav-cta-icon" aria-hidden="true"></span>
+			Beratung buchen
+		</a>
 	</div>
 </nav>
 
@@ -62,11 +84,11 @@
 	}
 
 	.navbar.scrolled {
-		background: rgba(7, 7, 18, 0.85);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
+		background: rgba(12, 32, 44, 0.6);
+		backdrop-filter: blur(14px);
+		-webkit-backdrop-filter: blur(14px);
 		padding: 0.65rem 0;
-		box-shadow: 0 1px 0 var(--card-border);
+		border-bottom: 1px solid rgba(127, 212, 224, 0.18);
 	}
 
 	.nav-inner {
@@ -145,8 +167,71 @@
 		transform: translateY(-7px) rotate(-45deg);
 	}
 
+	/* CTA button */
+	.nav-cta-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.55rem 1.25rem;
+		font-family: var(--font-body);
+		font-size: 0.82rem;
+		font-weight: 600;
+		color: var(--bg);
+		background: var(--accent);
+		border-radius: var(--radius-sm);
+		text-decoration: none;
+		white-space: nowrap;
+		transition:
+			background var(--duration) var(--ease),
+			box-shadow var(--duration) var(--ease);
+	}
+
+	.nav-cta-btn:hover {
+		background: var(--accent);
+		box-shadow: 0 0 24px rgba(98, 192, 208, 0.32);
+		transform: translateY(-1px);
+	}
+
+	.nav-cta-icon {
+		display: inline-block;
+		width: 0.85rem;
+		height: 0.85rem;
+		border-radius: 0.2rem;
+		border: 1.5px solid currentColor;
+		position: relative;
+	}
+
+	.nav-cta-icon::before {
+		content: '';
+		position: absolute;
+		left: 0.14rem;
+		right: 0.14rem;
+		top: 0.18rem;
+		height: 0.16rem;
+		border-bottom: 1px solid currentColor;
+	}
+
+	/* Hide mobile CTA item on desktop */
+	.nav-cta-mobile {
+		display: none;
+	}
+
 	/* Mobile */
 	@media (max-width: 767px) {
+		.nav-cta-desktop {
+			display: none;
+		}
+
+		.nav-cta-mobile {
+			display: flex;
+			justify-content: center;
+		}
+
+		.nav-cta-mobile .nav-cta-btn {
+			font-size: 1rem;
+			padding: 0.75rem 2rem;
+		}
+
 		.nav-toggle {
 			display: flex;
 		}
@@ -161,7 +246,7 @@
 			align-items: center;
 			justify-content: center;
 			gap: 2.5rem;
-			background: rgba(7, 7, 18, 0.97);
+			background: rgba(10, 22, 32, 0.97);
 			backdrop-filter: blur(16px);
 			-webkit-backdrop-filter: blur(16px);
 			opacity: 0;

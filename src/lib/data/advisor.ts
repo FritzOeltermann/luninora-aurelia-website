@@ -8,7 +8,7 @@ export type AdvisorTheme = {
 
 export type Stat = { label: string; value: string };
 export type Method = { icon: string; title: string; description: string };
-export type Service = { title: string; outcome: string; includes: string[] };
+export type Service = { title: string; outcome: string; includes: string[]; bullets: string[] };
 
 export type Training = { title: string; description: string };
 
@@ -213,47 +213,77 @@ export const advisor: AdvisorProfile = {
 	services: [
 		{
 			title: 'Seelenreinigung',
-			outcome: 'Wenn sich deine Seele schwer anf\u00fchlt und du wieder frei atmen m\u00f6chtest.',
+			outcome:
+				'Wenn sich deine Seele schwer anf\u00fchlt, unterst\u00fctze ich dich mit sanfter Energiearbeit und kleinen Impulsen f\u00fcr den Alltag.',
 			includes: [
 				'Behutsames Ersp\u00fcren dessen, was dich belastet',
 				'Energiearbeit zur Kl\u00e4rung und Reinigung',
 				'Impulse, wie du Leichtigkeit in deinen Alltag holen kannst'
+			],
+			bullets: [
+				'Behutsames Ersp\u00fcren innerer Lasten.',
+				'Sanfte Energiearbeit f\u00fcr Kl\u00e4rung und Reinigung.',
+				'Impulse f\u00fcr mehr Leichtigkeit im Alltag.'
 			]
 		},
 		{
 			title: 'Negative Energien neutralisieren',
-			outcome: 'Wenn du das Gef\u00fchl hast, von dunklen Energien umgeben zu sein.',
+			outcome:
+				'Wenn du dich von dunklen Energien umgeben f\u00fchlst, sp\u00fcren wir Belastungen auf, st\u00e4rken deine Kraft und setzen kl\u00e4rende Impulse f\u00fcr deinen Weg.',
 			includes: [
 				'Aufsp\u00fcren von energetischen Belastungen',
 				'St\u00e4rkung deiner eigenen Kraft und deines Schutzes',
 				'Kl\u00e4rende Impulse f\u00fcr deinen weiteren Weg'
+			],
+			bullets: [
+				'Aufsp\u00fcren energetischer Belastungen.',
+				'St\u00e4rkung deiner eigenen Kraft und deines Schutzes.',
+				'Kl\u00e4rende Impulse f\u00fcr deinen Weg.'
 			]
 		},
 		{
 			title: 'Begleitung bei Trauer',
-			outcome: 'Wenn Verlust und Schmerz deinen Alltag bestimmen.',
+			outcome:
+				'Wenn Verlust und Schmerz deinen Alltag bestimmen, halte ich einen gesch\u00fctzten Raum und begleite dich sanft Schritt f\u00fcr Schritt zur\u00fcck ins Leben.',
 			includes: [
 				'Gesch\u00fctzter Raum f\u00fcr alle Gef\u00fchle',
 				'Sanfte Entlastung und Stabilisierung',
 				'Unterst\u00fctzung, um Schritt f\u00fcr Schritt wieder ins Leben zu finden'
+			],
+			bullets: [
+				'Gesch\u00fctzter Raum f\u00fcr alle Gef\u00fchle.',
+				'Sanfte Entlastung und Stabilisierung.',
+				'Begleitung zur\u00fcck ins Leben.'
 			]
 		},
 		{
 			title: 'Seelische Blockaden l\u00f6sen',
-			outcome: 'Wenn dein Leben \u201esteht\u201c und du nicht wei\u00dft, warum.',
+			outcome:
+				'Wenn dein Leben \u201esteht\u201c und du nicht wei\u00dft, warum, nehme ich hellf\u00fchlig Blockaden wahr, deute deine Muster und bringe Licht in alte Themen.',
 			includes: [
 				'Hellf\u00fchlige Wahrnehmung innerer Blockaden',
 				'Deutung von Mustern und Wiederholungen',
 				'Licht in Themen bringen, die dich schon lange begleiten'
+			],
+			bullets: [
+				'Hellf\u00fchlige Wahrnehmung innerer Blockaden.',
+				'Erkennen von Mustern und Wiederholungen.',
+				'Licht in Themen, die dich schon lange begleiten.'
 			]
 		},
 		{
 			title: 'Tierkommunikation',
-			outcome: 'Wenn du dein Tier vermisst oder offene Fragen bleiben.',
+			outcome:
+				'Wenn du dein Tier vermisst oder Fragen offen sind, trete ich feinfühlig in Kontakt, \u00fcbermittle Botschaften und unterst\u00fctze dich im Umgang mit Abschied und Unsicherheit.',
 			includes: [
 				'Feinf\u00fchliger Kontakt zu deinem Tier',
 				'Botschaften, die Trost, Verst\u00e4ndnis und Frieden schenken k\u00f6nnen',
 				'Unterst\u00fctzung im Umgang mit Abschied, Schuldgef\u00fchlen oder Unsicherheit'
+			],
+			bullets: [
+				'Feinf\u00fchliger Kontakt zu deinem Tier.',
+				'Botschaften, die Trost und Frieden schenken.',
+				'Begleitung bei Abschied und offenen Fragen.'
 			]
 		}
 	],
@@ -281,7 +311,7 @@ export const advisor: AdvisorProfile = {
 			}
 		],
 		ctaLabel: 'Jetzt Beratung auf LuniNora starten',
-		ctaHref: 'https://luninora.de',
+		ctaHref: 'https://luninora.de/berater/maris',
 		subtext: 'Du musst das nicht alleine tragen.'
 	},
 

@@ -4,7 +4,8 @@
 	import QuoteBlock from '$lib/components/QuoteBlock.svelte';
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import TrustBar from '$lib/components/TrustBar.svelte';
-	import BookingSection from '$lib/components/BookingSection.svelte';
+	import ClosingCTA from '$lib/components/ClosingCTA.svelte';
+	import Section from '$lib/components/Section.svelte';
 </script>
 
 <svelte:head>
@@ -14,14 +15,22 @@
 
 <Hero {advisor} />
 
-<QuoteBlock text={advisor.quotes[0]} backgroundSrc="/images/maris-hero-bg.png" />
-
-<section class="services-section">
-	<div class="container services-inner">
+<Section
+	id="services"
+	title=""
+	tone="b"
+	divider="top"
+	align="left"
+>
+	<div class="services-inner">
 		<div class="services-header">
 			<div class="services-heading">
 				<p class="services-eyebrow">Deine Themen mit Maris</p>
-				<h2>Die Antworten liegen<br />in deinem Herzen.</h2>
+				<h2>
+					Die Antworten liegen
+					<br />
+					<span class="services-heading-highlight">in Dir.</span>
+				</h2>
 			</div>
 			<div class="services-copy">
 				<p>
@@ -34,20 +43,14 @@
 
 		<ServicesGrid items={advisor.services} />
 	</div>
-</section>
+</Section>
+
+<QuoteBlock text={advisor.quotes[0]} backgroundSrc="/images/hero-ocean-pebbles.png" />
 
 <TrustBar stats={advisor.stats} />
-
-<QuoteBlock text={advisor.quotes[1]} backgroundSrc="/images/maris-bg-quote-2.jpg" />
-
-<BookingSection booking={advisor.booking} />
+<ClosingCTA />
 
 <style>
-	.services-section {
-		padding-block: var(--section-gap);
-		padding-inline: var(--content-pad);
-	}
-
 	.services-inner {
 		display: flex;
 		flex-direction: column;
@@ -72,27 +75,33 @@
 		font-size: 0.8rem;
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
-		color: var(--accent2);
+		color: var(--accent);
 		margin-bottom: 0.75rem;
 	}
 
 	.services-heading h2 {
-		font-size: clamp(2rem, 4vw, 2.8rem);
-		max-width: 14ch;
+		font-size: clamp(2.6rem, 5.2vw, 3.6rem);
 	}
 
-	.services-heading h2 br {
-		display: none;
-	}
-
-	@media (min-width: 768px) {
-		.services-heading h2 br {
-			display: inline;
-		}
+	.services-heading-highlight {
+		font-style: italic;
+		color: var(--accent);
 	}
 
 	.services-copy p {
 		max-width: 40ch;
 		line-height: 1.8;
+		text-align: right;
+		margin-left: auto;
+	}
+
+	.methods-section {
+		padding-block: var(--section-gap);
+		padding-inline: var(--content-pad);
+		text-align: center;
+	}
+
+	.methods-section h2 {
+		margin-bottom: 2rem;
 	}
 </style>

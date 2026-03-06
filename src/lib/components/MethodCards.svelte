@@ -57,6 +57,6 @@
 	p {
 		font-size: 0.9rem;
 		line-height: 1.6;
-		color: var(--text-muted);
+		color: var(--muted);
 	}
 </style>

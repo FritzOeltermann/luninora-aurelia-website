@@ -28,9 +28,12 @@
 
 	/* Typography */
 	--font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-	--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-body: 'Nunito Sans', system-ui, -apple-system, sans-serif;
 	--leading-body: 1.7;
 	--leading-heading: 1.15;
+
+	/* Section dividers */
+	--divider-line: rgba(127, 212, 224, 0.22);
 
 	/* Transition */
 	--ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);

@@ -41,9 +41,9 @@
 		inset: 0;
 		z-index: 1;
 		background:
-			linear-gradient(to bottom, var(--bg) 0%, transparent 20%),
-			linear-gradient(to top, var(--bg) 0%, transparent 35%),
-			rgba(7, 7, 18, 0.5);
+			linear-gradient(to bottom, var(--bg) 0%, transparent 22%),
+			linear-gradient(to top, var(--bg) 0%, transparent 36%),
+			rgba(8, 20, 32, 0.52);
 	}
 
 	blockquote {
@@ -56,9 +56,9 @@
 	p {
 		font-family: var(--font-heading);
 		font-style: italic;
-		font-weight: 700;
+		font-weight: 600;
 		font-size: clamp(1.3rem, 3vw, 1.8rem);
-		line-height: 1.6;
+		line-height: 1.7;
 		color: var(--text);
 		max-width: none;
 	}

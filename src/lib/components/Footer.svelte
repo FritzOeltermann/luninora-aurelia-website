@@ -1,16 +1,21 @@
 <script lang="ts">
 	import { advisor } from '$lib/data/advisor';
+	import LuniNoraLogo from '$lib/components/LuniNoraLogo.svelte';
 </script>
 
 <footer class="footer">
 	<div class="footer-top">
 		<div class="footer-brand">
-			<p class="brand-name">{advisor.displayName}</p>
+			<div class="footer-col-header">
+				<a href="/" class="brand-name">{advisor.displayName}</a>
+			</div>
 			<p class="brand-slogan">{advisor.tagline}</p>
 		</div>
 
 		<div class="footer-nav">
-			<p class="footer-heading">Schnellzugriff</p>
+			<div class="footer-col-header">
+				<p class="footer-heading">Schnellzugriff</p>
+			</div>
 			<nav>
 				<a href="/about">Über mich</a>
 				<a href="/legal">Impressum</a>
@@ -18,9 +23,11 @@
 		</div>
 
 		<div class="footer-beratung">
-			<p class="footer-heading">Beratung</p>
+			<div class="footer-col-header">
+				<p class="footer-heading">Beratung</p>
+			</div>
 			<p class="beratung-text">Online über <a href="https://luninora.de" target="_blank" rel="noopener">LuniNora</a> oder persönlich nach Vereinbarung.</p>
-			<a href="https://luninora.de" target="_blank" rel="noopener" class="beratung-link">Inkl. Freiminuten für Neukunden</a>
+			<span class="beratung-note">Inkl. Freiminuten für Neukunden</span>
 		</div>
 	</div>
 
@@ -32,7 +39,9 @@
 		<div class="powered">
 			<p class="powered-line">
 				<span class="powered-label">Powered by</span>
-				<a href="https://luninora.de" target="_blank" rel="noopener" class="logo-text">LuniNora</a>
+				<a href="https://luninora.de" target="_blank" rel="noopener" class="logo-link">
+					<LuniNoraLogo height={44} />
+				</a>
 			</p>
 			<p class="powered-sub">Professionelle spirituelle Beratung</p>
 		</div>
@@ -67,6 +76,22 @@
 		}
 	}
 
+	.footer-col-header {
+		min-height: 1.75rem;
+	}
+
+	.footer-col-header .footer-heading {
+		margin-bottom: 0;
+	}
+
+	.footer-brand,
+	.footer-nav,
+	.footer-beratung {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
 	.footer-heading {
 		font-weight: 600;
 		font-size: 0.9rem;
@@ -74,17 +99,18 @@
 		margin-bottom: 0.75rem;
 	}
 
-	.footer-brand {
-		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
-	}
-
 	.brand-name {
 		font-family: var(--font-heading);
 		font-size: 1.2rem;
-		color: var(--accent);
+		color: var(--text);
 		font-weight: 600;
+		text-decoration: none;
+		transition: color var(--duration) var(--ease);
+	}
+
+	.brand-name:hover,
+	.brand-name:active {
+		color: var(--accent);
 	}
 
 	.brand-slogan {
@@ -111,12 +137,6 @@
 		color: var(--text);
 	}
 
-	.footer-beratung {
-		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
-	}
-
 	.beratung-text {
 		font-size: 0.85rem;
 		color: var(--muted);
@@ -132,11 +152,9 @@
 		text-decoration: underline;
 	}
 
-	.beratung-link {
+	.beratung-note {
 		font-size: 0.85rem;
 		color: var(--accent);
-		text-decoration: underline;
-		text-underline-offset: 2px;
 	}
 
 	.footer-bottom {
@@ -175,12 +193,16 @@
 		color: var(--muted);
 	}
 
-	.logo-text {
-		font-size: 1.1rem;
-		font-weight: 300;
-		letter-spacing: 0.04em;
+	.logo-link {
+		display: inline-flex;
+		align-items: center;
 		color: var(--text);
 		text-decoration: none;
+		transition: color var(--duration) var(--ease);
+	}
+
+	.logo-link:hover {
+		color: var(--accent);
 	}
 
 	.powered-sub {

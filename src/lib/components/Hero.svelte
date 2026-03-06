@@ -1,17 +1,18 @@
 <script lang="ts">
 	import type { AdvisorProfile } from '$lib/data/advisor';
 	import { reveal } from '$lib/actions/reveal';
-	import ChipRow from './ChipRow.svelte';
+	import HealingSeaGlassWash from '$lib/components/ui/backgrounds/ornaments/HealingSeaGlassWash.svelte';
 
 	let { advisor }: { advisor: AdvisorProfile } = $props();
 </script>
 
-<section class="hero">
+<section class="hero hero--pebbles">
+	<HealingSeaGlassWash opacity={0.9} tint="#81d4e0" />
 	<div class="hero-inner container" use:reveal={{ threshold: 0.05 }}>
 		<div class="hero-portrait">
 			<img
 				src={advisor.portraitSrc}
-				alt="{advisor.displayName} \u2013 Portr\u00e4t"
+				alt="{advisor.displayName} – Porträt"
 				onerror={(e: Event) => {
 					const img = e.currentTarget as HTMLImageElement;
 					img.style.display = 'none';
@@ -20,19 +21,22 @@
 			/>
 		</div>
 
-		<h1>{advisor.displayName}</h1>
-		<p class="hero-tagline">{advisor.heroHeadline}</p>
-		<p class="hero-sub">{advisor.heroSubcopy}</p>
+		<div class="hero-text">
+			<h1>{advisor.displayName}</h1>
+			<p class="hero-tagline">{advisor.heroHeadline}</p>
+			<p class="hero-sub">{advisor.heroSubcopy}</p>
 
-		<ChipRow items={advisor.topics} />
-
-		<div class="hero-stats">
-			{#each advisor.stats as stat}
-				<div class="stat">
-					<span class="stat-value">{stat.value}</span>
-					<span class="stat-label">{stat.label}</span>
-				</div>
-			{/each}
+			<div class="hero-ctas">
+				<a
+					href={advisor.booking.ctaHref}
+					class="btn"
+					target="_blank"
+					rel="noopener"
+				>
+					Jetzt Gespräch starten &rarr;
+				</a>
+				<a href="/about" class="btn-ghost">Mehr über mich</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -43,41 +47,28 @@
 		min-height: 100dvh;
 		display: flex;
 		align-items: center;
-		padding-block: 6rem 4rem;
+		padding-block: 7rem 4rem;
+		overflow: hidden;
 	}
 
 	.hero-inner {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		text-align: center;
+		gap: 2.5rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		gap: 1.25rem;
-	}
-
-	.hero-portrait {
-		width: 180px;
-		height: 180px;
-		border-radius: 50%;
-		overflow: hidden;
-		flex-shrink: 0;
-	}
-
-	.hero-portrait img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.hero-portrait.placeholder,
-	.hero-portrait:not(:has(img[style*='display'])) {
-		border: 2px solid var(--card-border);
-		background: var(--card);
-	}
-
-	/* Fallback for when img triggers onerror */
-	:global(.hero-portrait.placeholder) {
-		border: 2px solid var(--card-border);
-		background: var(--card);
+		text-align: center;
+		max-width: 46rem;
+		margin-inline: auto;
+		margin-top: 0.5rem;
 	}
 
 	h1 {
@@ -86,48 +77,80 @@
 	}
 
 	.hero-tagline {
-		font-family: var(--font-heading);
 		font-style: italic;
-		font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+		font-size: clamp(1.1rem, 2.2vw, 1.35rem);
 		color: var(--accent);
-		max-width: 40ch;
+		max-width: 38ch;
 		line-height: 1.5;
 	}
 
 	.hero-sub {
 		font-size: 1.05rem;
 		line-height: 1.8;
-		max-width: 58ch;
+		max-width: 50ch;
 	}
 
-	.hero-stats {
+	/* CTA row */
+	.hero-ctas {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 2.5rem 3.5rem;
-	}
-
-	.stat {
-		display: flex;
-		flex-direction: column;
+		gap: 1rem;
 		align-items: center;
-		text-align: center;
-		gap: 0.3rem;
+		margin-top: 0.5rem;
 	}
 
-	.stat-value {
-		font-family: var(--font-heading);
-		font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-		font-weight: 300;
+	.btn-ghost {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.85rem 2rem;
+		font-family: var(--font-body);
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--text);
+		background: transparent;
+		border: 1px solid var(--card-border);
+		border-radius: var(--radius-sm);
+		text-decoration: none;
+		transition:
+			border-color var(--duration) var(--ease),
+			color var(--duration) var(--ease);
+	}
+
+	.btn-ghost:hover {
+		border-color: var(--accent);
 		color: var(--accent);
-		line-height: 1.1;
 	}
 
-	.stat-label {
-		font-size: 0.75rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--muted);
+	/* ── Portrait column ── */
+	.hero-portrait {
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-inline: auto;
+		box-shadow: 0 0 40px rgba(98, 192, 208, 0.28);
+		transition:
+			transform var(--duration) var(--ease),
+			box-shadow var(--duration) var(--ease);
+	}
+
+	.hero-portrait img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+		display: block;
+	}
+
+	.hero-portrait:hover {
+		transform: scale(1.04);
+		box-shadow: 0 0 56px rgba(98, 192, 208, 0.4);
+	}
+
+	:global(.hero-portrait.placeholder) {
+		border-radius: 50% !important;
+		border: 2px solid var(--card-border) !important;
+		background: var(--card) !important;
 	}
 </style>

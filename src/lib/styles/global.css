@@ -14,8 +14,10 @@
 
 body {
 	font-family: var(--font-body);
+	font-weight: 400;
 	font-size: 1rem;
-	line-height: var(--leading-body);
+	line-height: 1.7;
+	text-rendering: optimizeLegibility;
 	color: var(--text);
 	background: var(--bg);
 	min-height: 100vh;
@@ -43,10 +45,15 @@ h2,
 h3,
 h4 {
 	font-family: var(--font-heading);
-	font-weight: 400;
-	line-height: var(--leading-heading);
+	font-weight: 500;
+	line-height: 1.12;
 	color: var(--text);
 	text-wrap: balance;
+	letter-spacing: -0.01em;
+}
+
+h1 {
+	letter-spacing: -0.02em;
 }
 
 h1 {
@@ -112,8 +119,23 @@ a:hover {
 /* ---- Utility: section spacing ---- */
 
 section {
+	position: relative;
 	padding-block: var(--section-gap);
 	padding-inline: var(--content-pad);
+}
+
+/* ---- Section tones ---- */
+
+section[data-tone='a'] {
+	background:
+		radial-gradient(ellipse 70% 55% at 18% 18%, rgba(98, 192, 208, 0.1), transparent 60%),
+		radial-gradient(ellipse 60% 50% at 85% 80%, rgba(211, 181, 122, 0.06), transparent 65%);
+}
+
+section[data-tone='b'] {
+	background:
+		radial-gradient(ellipse 65% 55% at 82% 18%, rgba(98, 192, 208, 0.1), transparent 62%),
+		radial-gradient(ellipse 70% 60% at 18% 85%, rgba(211, 181, 122, 0.06), transparent 70%);
 }
 
 /* ---- Utility: container ---- */
@@ -164,13 +186,22 @@ section {
 }
 
 .btn:hover {
-	background: var(--accent-hover);
-	box-shadow: 0 0 24px rgba(180, 156, 255, 0.35);
+	background: var(--accent);
+	box-shadow: 0 0 24px rgba(98, 192, 208, 0.32);
 	transform: translateY(-1px);
+	color: var(--bg);
 }
 
 .btn:active {
 	transform: translateY(0);
+}
+
+nav a,
+.btn,
+button {
+	font-family: var(--font-body);
+	font-weight: 600;
+	letter-spacing: 0.01em;
 }
 
 /* ---- Images ---- */

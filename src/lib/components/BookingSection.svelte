@@ -2,7 +2,7 @@
 	import type { Booking } from '$lib/data/advisor';
 	import { reveal } from '$lib/actions/reveal';
 
-	let { booking }: { booking: Booking } = $props();
+let { booking }: { booking: Booking } = $props();
 </script>
 
 <section class="booking-section" use:reveal>
@@ -61,8 +61,8 @@
 		font-size: 0.8rem;
 		font-weight: 500;
 		color: var(--accent);
-		background: rgba(180, 156, 255, 0.1);
-		border: 1px solid rgba(180, 156, 255, 0.2);
+		background: rgba(98, 192, 208, 0.10);
+		border: 1px solid rgba(127, 212, 224, 0.18);
 		border-radius: 100px;
 	}
 
@@ -107,7 +107,7 @@
 		width: 56px;
 		height: 56px;
 		border-radius: 50%;
-		background: rgba(180, 156, 255, 0.12);
+		background: rgba(98, 192, 208, 0.12);
 		font-size: 1.5rem;
 		margin-bottom: 0.25rem;
 	}
@@ -148,7 +148,7 @@
 
 	.cta-btn:hover {
 		background: var(--accent-hover);
-		box-shadow: 0 0 32px rgba(180, 156, 255, 0.4);
+		box-shadow: 0 0 32px rgba(98, 192, 208, 0.4);
 		transform: translateY(-2px);
 	}
 
